@@ -11,17 +11,15 @@ jobs:
         uses: actions/checkout@master
       - name: Deploy
         uses: appleboy/ssh-action@master
-        env:
-          STORAGE_ACCOUNT_KEY: ${{ secrets.STORAGE_ACCOUNT_KEY }}
         with:
           host: ${{ secrets.HOST }}
           username: boss
           key: ${{ secrets.SSH_KEY }}
-          envs: STORAGE_ACCOUNT_KEY
           script: |
             cd /var/www
             sudo git fetch --all
             sudo git reset --hard
             sudo git pull
+            sudo echo STORAGE_ACCOUNT_KEY=${{ secrets.STORAGE_ACCOUNT_KEY }} > .env
             sudo ~/.local/bin/docker-compose down
             sudo ~/.local/bin/docker-compose up -d
