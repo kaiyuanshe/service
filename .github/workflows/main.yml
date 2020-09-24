@@ -20,6 +20,7 @@ jobs:
             sudo git fetch --all
             sudo git reset --hard
             sudo git pull
-            sudo bash -c "echo STORAGE_ACCOUNT_KEY=${{ secrets.STORAGE_ACCOUNT_KEY }} > .env"
+            sudo bash -c "echo BASE_URL=${{ secrets.BASE_URL }} > .env"
+            sudo bash -c "echo STORAGE_ACCOUNT_KEY=${{ secrets.STORAGE_ACCOUNT_KEY }} >> .env"
             sudo ~/.local/bin/docker-compose down
             sudo ~/.local/bin/docker-compose up -d
