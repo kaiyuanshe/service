@@ -17,6 +17,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: boss
           key: ${{ secrets.SSH_KEY }}
+          envs: STORAGE_ACCOUNT_KEY
           script: |
             cd /var/www
             sudo git fetch --all
