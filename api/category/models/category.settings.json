@@ -12,8 +12,7 @@
     "name": {
       "type": "string",
       "required": true,
-      "unique": true,
-      "minLength": 1
+      "unique": true
     },
     "summary": {
       "type": "text",

@@ -524,8 +524,7 @@
             "type": "string"
           },
           "name": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "summary": {
             "type": "string",
@@ -627,8 +626,7 @@
         ],
         "properties": {
           "name": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "summary": {
             "type": "string",

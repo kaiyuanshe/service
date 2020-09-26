@@ -52,6 +52,13 @@
       "via": "users",
       "plugin": "users-permissions",
       "configurable": false
+    },
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "organizations": {
+      "collection": "organization"
     }
   }
 }

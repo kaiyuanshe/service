@@ -558,6 +558,12 @@
                 "role": {
                   "type": "string"
                 },
+                "name": {
+                  "type": "string"
+                },
+                "organizations": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },

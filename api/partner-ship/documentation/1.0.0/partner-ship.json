@@ -545,7 +545,10 @@
             "required": [
               "id",
               "name",
-              "description"
+              "description",
+              "start_time",
+              "end_time",
+              "location"
             ],
             "properties": {
               "id": {
@@ -568,6 +571,15 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "start_time": {
+                "type": "datetime"
+              },
+              "end_time": {
+                "type": "datetime"
+              },
+              "location": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"

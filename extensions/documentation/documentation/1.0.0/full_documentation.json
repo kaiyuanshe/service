@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/26/2020 9:25:53 PM"
+    "x-generation-date": "09/27/2020 1:18:42 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4718,7 +4718,10 @@
         "required": [
           "id",
           "name",
-          "description"
+          "description",
+          "start_time",
+          "end_time",
+          "location"
         ],
         "properties": {
           "id": {
@@ -4836,6 +4839,16 @@
               }
             }
           },
+          "start_time": {
+            "type": "datetime"
+          },
+          "end_time": {
+            "type": "datetime"
+          },
+          "location": {
+            "type": "string",
+            "minLength": 10
+          },
           "created_by": {
             "required": [
               "id",
@@ -4929,7 +4942,10 @@
       "NewActivity": {
         "required": [
           "name",
-          "description"
+          "description",
+          "start_time",
+          "end_time",
+          "location"
         ],
         "properties": {
           "name": {
@@ -4950,6 +4966,16 @@
               "type": "string"
             }
           },
+          "start_time": {
+            "type": "datetime"
+          },
+          "end_time": {
+            "type": "datetime"
+          },
+          "location": {
+            "type": "string",
+            "minLength": 10
+          },
           "created_by": {
             "type": "string"
           },
@@ -4968,8 +4994,7 @@
             "type": "string"
           },
           "name": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "summary": {
             "type": "string",
@@ -5071,8 +5096,7 @@
         ],
         "properties": {
           "name": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "summary": {
             "type": "string",
@@ -5102,8 +5126,7 @@
             "minLength": 2
           },
           "slogan": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "logo": {
             "required": [
@@ -5352,8 +5375,7 @@
             "minLength": 2
           },
           "slogan": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "link": {
             "type": "string",
@@ -5393,7 +5415,10 @@
             "required": [
               "id",
               "name",
-              "description"
+              "description",
+              "start_time",
+              "end_time",
+              "location"
             ],
             "properties": {
               "id": {
@@ -5416,6 +5441,15 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "start_time": {
+                "type": "datetime"
+              },
+              "end_time": {
+                "type": "datetime"
+              },
+              "location": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -5644,6 +5678,12 @@
               "role": {
                 "type": "string"
               },
+              "name": {
+                "type": "string"
+              },
+              "organizations": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -5656,7 +5696,10 @@
             "required": [
               "id",
               "name",
-              "description"
+              "description",
+              "start_time",
+              "end_time",
+              "location"
             ],
             "properties": {
               "id": {
@@ -5679,6 +5722,15 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "start_time": {
+                "type": "datetime"
+              },
+              "end_time": {
+                "type": "datetime"
+              },
+              "location": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -5925,6 +5977,12 @@
                 "role": {
                   "type": "string"
                 },
+                "name": {
+                  "type": "string"
+                },
+                "organizations": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -6126,6 +6184,49 @@
               }
             }
           },
+          "name": {
+            "type": "string"
+          },
+          "organizations": {
+            "required": [
+              "id",
+              "name",
+              "logo",
+              "summary"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slogan": {
+                "type": "string"
+              },
+              "logo": {
+                "type": "string"
+              },
+              "link": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "video": {
+                "type": "string"
+              },
+              "message_link": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "created_by": {
             "required": [
               "id",
@@ -6249,6 +6350,12 @@
             "default": false
           },
           "role": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "organizations": {
             "type": "string"
           },
           "created_by": {

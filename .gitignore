@@ -78,6 +78,7 @@ $RECYCLE.BIN/
 
 *#
 ssl
+.vscode/
 .idea
 nbproject
 public/uploads/*

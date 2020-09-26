@@ -16,8 +16,8 @@
       "minLength": 2
     },
     "activity": {
-      "model": "activity",
-      "via": "partner_ships"
+      "via": "partner_ships",
+      "model": "activity"
     },
     "level": {
       "type": "integer",

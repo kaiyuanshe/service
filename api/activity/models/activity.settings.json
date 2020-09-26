@@ -35,8 +35,21 @@
       "minLength": 100
     },
     "partner_ships": {
-      "via": "activity",
-      "collection": "partner-ship"
+      "collection": "partner-ship",
+      "via": "activity"
+    },
+    "start_time": {
+      "type": "datetime",
+      "required": true
+    },
+    "end_time": {
+      "type": "datetime",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "required": true,
+      "minLength": 10
     }
   }
 }

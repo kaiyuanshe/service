@@ -17,8 +17,7 @@
     },
     "slogan": {
       "type": "string",
-      "unique": true,
-      "minLength": 1
+      "unique": true
     },
     "logo": {
       "model": "file",

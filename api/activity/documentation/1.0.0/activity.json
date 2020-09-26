@@ -518,7 +518,10 @@
         "required": [
           "id",
           "name",
-          "description"
+          "description",
+          "start_time",
+          "end_time",
+          "location"
         ],
         "properties": {
           "id": {
@@ -636,6 +639,16 @@
               }
             }
           },
+          "start_time": {
+            "type": "datetime"
+          },
+          "end_time": {
+            "type": "datetime"
+          },
+          "location": {
+            "type": "string",
+            "minLength": 10
+          },
           "created_by": {
             "required": [
               "id",
@@ -729,7 +742,10 @@
       "NewActivity": {
         "required": [
           "name",
-          "description"
+          "description",
+          "start_time",
+          "end_time",
+          "location"
         ],
         "properties": {
           "name": {
@@ -749,6 +765,16 @@
             "items": {
               "type": "string"
             }
+          },
+          "start_time": {
+            "type": "datetime"
+          },
+          "end_time": {
+            "type": "datetime"
+          },
+          "location": {
+            "type": "string",
+            "minLength": 10
           },
           "created_by": {
             "type": "string"
