@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "programs",
+  "info": {
+    "name": "Program"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "minLength": 2
+    },
+    "start_time": {
+      "type": "datetime",
+      "required": true
+    },
+    "end_time": {
+      "type": "datetime",
+      "required": true
+    },
+    "summary": {
+      "type": "text",
+      "unique": true,
+      "minLength": 5
+    },
+    "mentors": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "activity": {
+      "model": "activity"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "lecture",
+        "workshop",
+        "exhibition"
+      ]
+    }
+  }
+}

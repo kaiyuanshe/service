@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "partners",
+  "collectionName": "organizations",
   "info": {
-    "name": "Partner"
+    "name": "Organization"
   },
   "options": {
     "increments": true,
@@ -34,16 +34,11 @@
       "unique": true,
       "minLength": 10
     },
-    "introduction": {
+    "summary": {
       "type": "text",
+      "required": true,
       "unique": true,
-      "minLength": 10,
-      "maxLength": 1000
-    },
-    "message_link": {
-      "type": "string",
-      "unique": true,
-      "minLength": 9
+      "minLength": 20
     },
     "video": {
       "model": "file",
@@ -54,9 +49,10 @@
       "plugin": "upload",
       "required": false
     },
-    "partner_ships": {
-      "via": "partner",
-      "collection": "partner-ship"
+    "message_link": {
+      "type": "string",
+      "unique": true,
+      "minLength": 10
     }
   }
 }

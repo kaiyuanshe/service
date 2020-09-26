@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/partner-ships": {
+    "/categories": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,10 +10,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Category"
                   }
                 }
               }
@@ -52,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner-ship"
+          "Category"
         ],
         "parameters": [
           {
@@ -202,11 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Category"
                 }
               }
             }
@@ -244,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner-ship"
+          "Category"
         ],
         "requestBody": {
           "description": "",
@@ -252,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPartner-ship"
+                "$ref": "#/components/schemas/NewCategory"
               }
             }
           }
         }
       }
     },
-    "/partner-ships/count": {
+    "/categories/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -270,8 +265,8 @@
               "application/json": {
                 "schema": {
                   "properties": {
-                    "foo": {
-                      "type": "string"
+                    "count": {
+                      "type": "integer"
                     }
                   }
                 }
@@ -311,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Partner-ship"
+          "Category"
         ],
         "parameters": []
       }
     },
-    "/partner-ships/{id}": {
+    "/categories/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -326,11 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Category"
                 }
               }
             }
@@ -368,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner-ship"
+          "Category"
         ],
         "parameters": [
           {
@@ -392,11 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Category"
                 }
               }
             }
@@ -434,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner-ship"
+          "Category"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPartner-ship"
+                "$ref": "#/components/schemas/NewCategory"
               }
             }
           }
@@ -508,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner-ship"
+          "Category"
         ],
         "parameters": [
           {
@@ -527,98 +514,22 @@
   },
   "components": {
     "schemas": {
-      "Partner-ship": {
+      "Category": {
         "required": [
           "id",
-          "title",
-          "level"
+          "name"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "title": {
+          "name": {
             "type": "string",
-            "minLength": 2
+            "minLength": 1
           },
-          "activity": {
-            "required": [
-              "id",
-              "name",
-              "description"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "slogan": {
-                "type": "string"
-              },
-              "banner": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "partner_ships": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "level": {
-            "type": "integer"
-          },
-          "organization": {
-            "required": [
-              "id",
-              "name",
-              "logo",
-              "summary"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "slogan": {
-                "type": "string"
-              },
-              "logo": {
-                "type": "string"
-              },
-              "link": {
-                "type": "string"
-              },
-              "summary": {
-                "type": "string"
-              },
-              "video": {
-                "type": "string"
-              },
-              "message_link": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "summary": {
+            "type": "string",
+            "minLength": 3
           },
           "created_by": {
             "required": [
@@ -710,24 +621,18 @@
           }
         }
       },
-      "NewPartner-ship": {
+      "NewCategory": {
         "required": [
-          "title",
-          "level"
+          "name"
         ],
         "properties": {
-          "title": {
+          "name": {
             "type": "string",
-            "minLength": 2
+            "minLength": 1
           },
-          "activity": {
-            "type": "string"
-          },
-          "level": {
-            "type": "integer"
-          },
-          "organization": {
-            "type": "string"
+          "summary": {
+            "type": "string",
+            "minLength": 3
           },
           "created_by": {
             "type": "string"
@@ -739,5 +644,9 @@
       }
     }
   },
-  "tags": []
+  "tags": [
+    {
+      "name": "Category"
+    }
+  ]
 }

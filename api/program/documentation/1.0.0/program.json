@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/partner-ships": {
+    "/programs": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,10 +10,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Program"
                   }
                 }
               }
@@ -52,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner-ship"
+          "Program"
         ],
         "parameters": [
           {
@@ -202,11 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Program"
                 }
               }
             }
@@ -244,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner-ship"
+          "Program"
         ],
         "requestBody": {
           "description": "",
@@ -252,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPartner-ship"
+                "$ref": "#/components/schemas/NewProgram"
               }
             }
           }
         }
       }
     },
-    "/partner-ships/count": {
+    "/programs/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -270,8 +265,8 @@
               "application/json": {
                 "schema": {
                   "properties": {
-                    "foo": {
-                      "type": "string"
+                    "count": {
+                      "type": "integer"
                     }
                   }
                 }
@@ -311,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Partner-ship"
+          "Program"
         ],
         "parameters": []
       }
     },
-    "/partner-ships/{id}": {
+    "/programs/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -326,11 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Program"
                 }
               }
             }
@@ -368,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner-ship"
+          "Program"
         ],
         "parameters": [
           {
@@ -392,11 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Program"
                 }
               }
             }
@@ -434,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner-ship"
+          "Program"
         ],
         "requestBody": {
           "description": "",
@@ -442,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPartner-ship"
+                "$ref": "#/components/schemas/NewProgram"
               }
             }
           }
@@ -508,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner-ship"
+          "Program"
         ],
         "parameters": [
           {
@@ -527,11 +514,12 @@
   },
   "components": {
     "schemas": {
-      "Partner-ship": {
+      "Program": {
         "required": [
           "id",
           "title",
-          "level"
+          "start_time",
+          "end_time"
         ],
         "properties": {
           "id": {
@@ -540,6 +528,58 @@
           "title": {
             "type": "string",
             "minLength": 2
+          },
+          "start_time": {
+            "type": "datetime"
+          },
+          "end_time": {
+            "type": "datetime"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 5
+          },
+          "mentors": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "activity": {
             "required": [
@@ -577,48 +617,13 @@
               }
             }
           },
-          "level": {
-            "type": "integer"
-          },
-          "organization": {
-            "required": [
-              "id",
-              "name",
-              "logo",
-              "summary"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "slogan": {
-                "type": "string"
-              },
-              "logo": {
-                "type": "string"
-              },
-              "link": {
-                "type": "string"
-              },
-              "summary": {
-                "type": "string"
-              },
-              "video": {
-                "type": "string"
-              },
-              "message_link": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "type": {
+            "type": "string",
+            "enum": [
+              "lecture",
+              "workshop",
+              "exhibition"
+            ]
           },
           "created_by": {
             "required": [
@@ -710,24 +715,40 @@
           }
         }
       },
-      "NewPartner-ship": {
+      "NewProgram": {
         "required": [
           "title",
-          "level"
+          "start_time",
+          "end_time"
         ],
         "properties": {
           "title": {
             "type": "string",
             "minLength": 2
           },
+          "start_time": {
+            "type": "datetime"
+          },
+          "end_time": {
+            "type": "datetime"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 5
+          },
+          "mentors": {
+            "type": "string"
+          },
           "activity": {
             "type": "string"
           },
-          "level": {
-            "type": "integer"
-          },
-          "organization": {
-            "type": "string"
+          "type": {
+            "type": "string",
+            "enum": [
+              "lecture",
+              "workshop",
+              "exhibition"
+            ]
           },
           "created_by": {
             "type": "string"
@@ -739,5 +760,9 @@
       }
     }
   },
-  "tags": []
+  "tags": [
+    {
+      "name": "Program"
+    }
+  ]
 }

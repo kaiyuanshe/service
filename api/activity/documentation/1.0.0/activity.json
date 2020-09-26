@@ -618,14 +618,14 @@
                 "title": {
                   "type": "string"
                 },
-                "partner": {
-                  "type": "string"
-                },
                 "activity": {
                   "type": "string"
                 },
                 "level": {
                   "type": "integer"
+                },
+                "organization": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"

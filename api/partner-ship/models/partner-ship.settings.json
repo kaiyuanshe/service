@@ -15,10 +15,6 @@
       "unique": false,
       "minLength": 2
     },
-    "partner": {
-      "model": "partner",
-      "via": "partner_ships"
-    },
     "activity": {
       "model": "activity",
       "via": "partner_ships"
@@ -26,6 +22,9 @@
     "level": {
       "type": "integer",
       "required": true
+    },
+    "organization": {
+      "model": "organization"
     }
   }
 }

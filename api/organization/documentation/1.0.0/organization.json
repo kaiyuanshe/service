@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/partners": {
+    "/organizations": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Partner"
+                    "$ref": "#/components/schemas/Organization"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Organization"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Partner"
+                  "$ref": "#/components/schemas/Organization"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Organization"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPartner"
+                "$ref": "#/components/schemas/NewOrganization"
               }
             }
           }
         }
       }
     },
-    "/partners/count": {
+    "/organizations/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Organization"
         ],
         "parameters": []
       }
     },
-    "/partners/{id}": {
+    "/organizations/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Partner"
+                  "$ref": "#/components/schemas/Organization"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Organization"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Partner"
+                  "$ref": "#/components/schemas/Organization"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Organization"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPartner"
+                "$ref": "#/components/schemas/NewOrganization"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Organization"
         ],
         "parameters": [
           {
@@ -514,11 +514,12 @@
   },
   "components": {
     "schemas": {
-      "Partner": {
+      "Organization": {
         "required": [
           "id",
           "name",
-          "logo"
+          "logo",
+          "summary"
         ],
         "properties": {
           "id": {
@@ -603,14 +604,9 @@
             "type": "string",
             "minLength": 10
           },
-          "introduction": {
+          "summary": {
             "type": "string",
-            "maxLength": 1000,
-            "minLength": 10
-          },
-          "message_link": {
-            "type": "string",
-            "minLength": 9
+            "minLength": 20
           },
           "video": {
             "required": [
@@ -679,38 +675,9 @@
               }
             }
           },
-          "partner_ships": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title",
-                "level"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "partner": {
-                  "type": "string"
-                },
-                "activity": {
-                  "type": "string"
-                },
-                "level": {
-                  "type": "integer"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "message_link": {
+            "type": "string",
+            "minLength": 10
           },
           "created_by": {
             "required": [
@@ -802,9 +769,10 @@
           }
         }
       },
-      "NewPartner": {
+      "NewOrganization": {
         "required": [
-          "name"
+          "name",
+          "summary"
         ],
         "properties": {
           "name": {
@@ -819,20 +787,13 @@
             "type": "string",
             "minLength": 10
           },
-          "introduction": {
+          "summary": {
             "type": "string",
-            "maxLength": 1000,
-            "minLength": 10
+            "minLength": 20
           },
           "message_link": {
             "type": "string",
-            "minLength": 9
-          },
-          "partner_ships": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "minLength": 10
           },
           "created_by": {
             "type": "string"
@@ -846,7 +807,7 @@
   },
   "tags": [
     {
-      "name": "Partner"
+      "name": "Organization"
     }
   ]
 }
