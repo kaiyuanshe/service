@@ -24,4 +24,3 @@ jobs:
             echo STORAGE_ACCOUNT_KEY=${{ secrets.STORAGE_ACCOUNT_KEY }} >> .env
             sudo ~/.local/bin/docker-compose down
             sudo ~/.local/bin/docker-compose up -d
-            sudo caddy run

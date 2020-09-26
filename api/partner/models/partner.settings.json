@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "partners",
+  "info": {
+    "name": "Partner"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 2
+    },
+    "slogan": {
+      "type": "string",
+      "unique": true,
+      "minLength": 1
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "unique": true,
+      "minLength": 10
+    },
+    "introduction": {
+      "type": "text",
+      "unique": true,
+      "minLength": 10,
+      "maxLength": 1000
+    },
+    "message_link": {
+      "type": "string",
+      "unique": true,
+      "minLength": 9
+    },
+    "video": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
