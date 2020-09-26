@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/partners": {
+    "/activities": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Partner"
+                    "$ref": "#/components/schemas/Activity"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Activity"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Partner"
+                  "$ref": "#/components/schemas/Activity"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Activity"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPartner"
+                "$ref": "#/components/schemas/NewActivity"
               }
             }
           }
         }
       }
     },
-    "/partners/count": {
+    "/activities/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Activity"
         ],
         "parameters": []
       }
     },
-    "/partners/{id}": {
+    "/activities/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Partner"
+                  "$ref": "#/components/schemas/Activity"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Activity"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Partner"
+                  "$ref": "#/components/schemas/Activity"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Activity"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPartner"
+                "$ref": "#/components/schemas/NewActivity"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Activity"
         ],
         "parameters": [
           {
@@ -514,11 +514,11 @@
   },
   "components": {
     "schemas": {
-      "Partner": {
+      "Activity": {
         "required": [
           "id",
           "name",
-          "logo"
+          "description"
         ],
         "properties": {
           "id": {
@@ -530,9 +530,9 @@
           },
           "slogan": {
             "type": "string",
-            "minLength": 1
+            "minLength": 3
           },
-          "logo": {
+          "banner": {
             "required": [
               "id",
               "name",
@@ -599,85 +599,9 @@
               }
             }
           },
-          "link": {
+          "description": {
             "type": "string",
-            "minLength": 10
-          },
-          "introduction": {
-            "type": "string",
-            "maxLength": 1000,
-            "minLength": 10
-          },
-          "message_link": {
-            "type": "string",
-            "minLength": 9
-          },
-          "video": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+            "minLength": 100
           },
           "partner_ships": {
             "type": "array",
@@ -802,9 +726,10 @@
           }
         }
       },
-      "NewPartner": {
+      "NewActivity": {
         "required": [
-          "name"
+          "name",
+          "description"
         ],
         "properties": {
           "name": {
@@ -813,20 +738,11 @@
           },
           "slogan": {
             "type": "string",
-            "minLength": 1
+            "minLength": 3
           },
-          "link": {
+          "description": {
             "type": "string",
-            "minLength": 10
-          },
-          "introduction": {
-            "type": "string",
-            "maxLength": 1000,
-            "minLength": 10
-          },
-          "message_link": {
-            "type": "string",
-            "minLength": 9
+            "minLength": 100
           },
           "partner_ships": {
             "type": "array",
@@ -846,7 +762,7 @@
   },
   "tags": [
     {
-      "name": "Partner"
+      "name": "Activity"
     }
   ]
 }

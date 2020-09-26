@@ -53,6 +53,10 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "partner_ships": {
+      "via": "partner",
+      "collection": "partner-ship"
     }
   }
 }

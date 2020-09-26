@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/partners": {
+    "/partner-ships": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,9 +10,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Partner"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Partner-ship"
         ],
         "parameters": [
           {
@@ -201,72 +202,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Partner"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Partner"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewPartner"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/partners/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,12 +244,22 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Partner-ship"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPartner-ship"
+              }
+            }
+          }
+        }
       }
     },
-    "/partners/{id}": {
+    "/partner-ships/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +269,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Partner"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Partner-ship"
+        ],
+        "parameters": []
+      }
+    },
+    "/partner-ships/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Partner-ship"
         ],
         "parameters": [
           {
@@ -383,7 +392,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Partner"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Partner-ship"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPartner"
+                "$ref": "#/components/schemas/NewPartner-ship"
               }
             }
           }
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Partner"
+          "Partner-ship"
         ],
         "parameters": [
           {
@@ -514,33 +527,25 @@
   },
   "components": {
     "schemas": {
-      "Partner": {
+      "Partner-ship": {
         "required": [
           "id",
-          "name",
-          "logo"
+          "title",
+          "level"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "title": {
             "type": "string",
             "minLength": 2
           },
-          "slogan": {
-            "type": "string",
-            "minLength": 1
-          },
-          "logo": {
+          "partner": {
             "required": [
               "id",
               "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
+              "logo"
             ],
             "properties": {
               "id": {
@@ -549,168 +554,76 @@
               "name": {
                 "type": "string"
               },
-              "alternativeText": {
+              "slogan": {
                 "type": "string"
               },
-              "caption": {
+              "logo": {
                 "type": "string"
               },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
+              "link": {
                 "type": "string"
               },
-              "ext": {
+              "introduction": {
                 "type": "string"
               },
-              "mime": {
+              "message_link": {
                 "type": "string"
               },
-              "size": {
-                "type": "number"
-              },
-              "url": {
+              "video": {
                 "type": "string"
               },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "link": {
-            "type": "string",
-            "minLength": 10
-          },
-          "introduction": {
-            "type": "string",
-            "maxLength": 1000,
-            "minLength": 10
-          },
-          "message_link": {
-            "type": "string",
-            "minLength": 9
-          },
-          "video": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "partner_ships": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title",
-                "level"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "partner": {
-                  "type": "string"
-                },
-                "activity": {
-                  "type": "string"
-                },
-                "level": {
-                  "type": "integer"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+              "partner_ships": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
+          },
+          "activity": {
+            "required": [
+              "id",
+              "name",
+              "description"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slogan": {
+                "type": "string"
+              },
+              "banner": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "partner_ships": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "level": {
+            "type": "integer"
           },
           "created_by": {
             "required": [
@@ -802,37 +715,24 @@
           }
         }
       },
-      "NewPartner": {
+      "NewPartner-ship": {
         "required": [
-          "name"
+          "title",
+          "level"
         ],
         "properties": {
-          "name": {
+          "title": {
             "type": "string",
             "minLength": 2
           },
-          "slogan": {
-            "type": "string",
-            "minLength": 1
+          "partner": {
+            "type": "string"
           },
-          "link": {
-            "type": "string",
-            "minLength": 10
+          "activity": {
+            "type": "string"
           },
-          "introduction": {
-            "type": "string",
-            "maxLength": 1000,
-            "minLength": 10
-          },
-          "message_link": {
-            "type": "string",
-            "minLength": 9
-          },
-          "partner_ships": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "level": {
+            "type": "integer"
           },
           "created_by": {
             "type": "string"
@@ -844,9 +744,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "Partner"
-    }
-  ]
+  "tags": []
 }
