@@ -633,6 +633,9 @@
                   "type": "string"
                 }
               },
+              "activity": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },

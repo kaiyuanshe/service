@@ -647,6 +647,54 @@
               }
             }
           },
+          "activity": {
+            "required": [
+              "id",
+              "name",
+              "description",
+              "start_time",
+              "end_time",
+              "location"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slogan": {
+                "type": "string"
+              },
+              "banner": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "partner_ships": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "start_time": {
+                "type": "datetime"
+              },
+              "end_time": {
+                "type": "datetime"
+              },
+              "location": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "created_by": {
             "required": [
               "id",
@@ -759,6 +807,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "activity": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

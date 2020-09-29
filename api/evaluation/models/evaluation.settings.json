@@ -22,8 +22,8 @@
       "minLength": 5
     },
     "contribution": {
-      "model": "contribution",
-      "via": "evaluations"
+      "via": "evaluations",
+      "model": "contribution"
     },
     "program": {
       "via": "evaluations",

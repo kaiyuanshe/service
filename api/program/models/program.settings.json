@@ -50,6 +50,25 @@
     "evaluations": {
       "collection": "evaluation",
       "via": "program"
+    },
+    "accounts": {
+      "collection": "account",
+      "via": "program"
+    },
+    "documents": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "verified": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

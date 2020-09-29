@@ -612,6 +612,21 @@
                   "type": "string"
                 }
               },
+              "accounts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "documents": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "verified": {
+                "type": "boolean"
+              },
               "created_by": {
                 "type": "string"
               },

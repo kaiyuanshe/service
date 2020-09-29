@@ -38,6 +38,9 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "activity": {
+      "model": "activity"
     }
   }
 }

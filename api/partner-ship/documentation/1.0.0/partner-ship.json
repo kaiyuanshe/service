@@ -653,7 +653,8 @@
                 "subject",
                 "amount",
                 "date",
-                "method"
+                "method",
+                "invoices"
               ],
               "properties": {
                 "id": {
@@ -674,13 +675,22 @@
                 "method": {
                   "type": "string"
                 },
-                "user": {
-                  "type": "string"
-                },
-                "organization": {
-                  "type": "string"
-                },
                 "partner_ship": {
+                  "type": "string"
+                },
+                "program": {
+                  "type": "string"
+                },
+                "invoices": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "verified": {
+                  "type": "boolean"
+                },
+                "property": {
                   "type": "string"
                 },
                 "created_by": {
@@ -691,6 +701,10 @@
                 }
               }
             }
+          },
+          "verified": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "required": [
@@ -819,6 +833,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "verified": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"

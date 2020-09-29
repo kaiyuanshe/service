@@ -44,10 +44,10 @@
     "owner": {
       "model": "organization"
     },
-    "devices": {
+    "equipments": {
       "type": "component",
       "repeatable": true,
-      "component": "supply.device"
+      "component": "supplies.goods"
     }
   }
 }

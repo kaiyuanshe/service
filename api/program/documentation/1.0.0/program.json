@@ -580,6 +580,9 @@
               "organizations": {
                 "type": "string"
               },
+              "avatar": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -678,7 +681,7 @@
               "owner": {
                 "type": "string"
               },
-              "devices": {
+              "equipments": {
                 "type": "component"
               },
               "created_by": {
@@ -720,6 +723,137 @@
                 }
               }
             }
+          },
+          "accounts": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "subject",
+                "amount",
+                "date",
+                "method",
+                "invoices"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "subject": {
+                  "type": "string"
+                },
+                "remark": {
+                  "type": "string"
+                },
+                "amount": {
+                  "type": "number"
+                },
+                "date": {
+                  "type": "datetime"
+                },
+                "method": {
+                  "type": "string"
+                },
+                "partner_ship": {
+                  "type": "string"
+                },
+                "program": {
+                  "type": "string"
+                },
+                "invoices": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "verified": {
+                  "type": "boolean"
+                },
+                "property": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "verified": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "required": [
@@ -855,6 +989,16 @@
             "items": {
               "type": "string"
             }
+          },
+          "accounts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "verified": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"

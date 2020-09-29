@@ -36,8 +36,8 @@
       "model": "task"
     },
     "evaluations": {
-      "via": "contribution",
-      "collection": "evaluation"
+      "collection": "evaluation",
+      "via": "contribution"
     }
   }
 }

@@ -617,6 +617,9 @@
               "organizations": {
                 "type": "string"
               },
+              "avatar": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -665,13 +668,14 @@
               }
             }
           },
-          "devices": {
+          "equipments": {
             "type": "array",
             "items": {
               "type": "object",
               "required": [
                 "id",
                 "name",
+                "specification",
                 "amount"
               ],
               "properties": {
@@ -682,15 +686,93 @@
                   "type": "string"
                 },
                 "specification": {
-                  "type": "string",
-                  "minLength": 2
+                  "type": "string"
                 },
                 "amount": {
                   "type": "integer",
                   "default": 1
                 },
+                "films": {
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "id",
+                      "name",
+                      "hash",
+                      "mime",
+                      "size",
+                      "url",
+                      "provider"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "alternativeText": {
+                        "type": "string"
+                      },
+                      "caption": {
+                        "type": "string"
+                      },
+                      "width": {
+                        "type": "integer"
+                      },
+                      "height": {
+                        "type": "integer"
+                      },
+                      "formats": {
+                        "type": "object"
+                      },
+                      "hash": {
+                        "type": "string"
+                      },
+                      "ext": {
+                        "type": "string"
+                      },
+                      "mime": {
+                        "type": "string"
+                      },
+                      "size": {
+                        "type": "number"
+                      },
+                      "url": {
+                        "type": "string"
+                      },
+                      "previewUrl": {
+                        "type": "string"
+                      },
+                      "provider": {
+                        "type": "string"
+                      },
+                      "provider_metadata": {
+                        "type": "object"
+                      },
+                      "related": {
+                        "type": "string"
+                      },
+                      "created_by": {
+                        "type": "string"
+                      },
+                      "updated_by": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
                 "remark": {
                   "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "textile",
+                    "mechanical",
+                    "electric",
+                    "digital"
+                  ]
                 }
               }
             }
@@ -850,13 +932,14 @@
           "owner": {
             "type": "string"
           },
-          "devices": {
+          "equipments": {
             "type": "array",
             "items": {
               "type": "object",
               "required": [
                 "id",
                 "name",
+                "specification",
                 "amount"
               ],
               "properties": {
@@ -867,15 +950,93 @@
                   "type": "string"
                 },
                 "specification": {
-                  "type": "string",
-                  "minLength": 2
+                  "type": "string"
                 },
                 "amount": {
                   "type": "integer",
                   "default": 1
                 },
+                "films": {
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "id",
+                      "name",
+                      "hash",
+                      "mime",
+                      "size",
+                      "url",
+                      "provider"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "alternativeText": {
+                        "type": "string"
+                      },
+                      "caption": {
+                        "type": "string"
+                      },
+                      "width": {
+                        "type": "integer"
+                      },
+                      "height": {
+                        "type": "integer"
+                      },
+                      "formats": {
+                        "type": "object"
+                      },
+                      "hash": {
+                        "type": "string"
+                      },
+                      "ext": {
+                        "type": "string"
+                      },
+                      "mime": {
+                        "type": "string"
+                      },
+                      "size": {
+                        "type": "number"
+                      },
+                      "url": {
+                        "type": "string"
+                      },
+                      "previewUrl": {
+                        "type": "string"
+                      },
+                      "provider": {
+                        "type": "string"
+                      },
+                      "provider_metadata": {
+                        "type": "object"
+                      },
+                      "related": {
+                        "type": "string"
+                      },
+                      "created_by": {
+                        "type": "string"
+                      },
+                      "updated_by": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
                 "remark": {
                   "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "textile",
+                    "mechanical",
+                    "electric",
+                    "digital"
+                  ]
                 }
               }
             }

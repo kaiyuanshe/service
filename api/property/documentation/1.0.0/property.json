@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/accounts": {
+    "/properties": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Account"
+                    "$ref": "#/components/schemas/Property"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Account"
+          "Property"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Account"
+                  "$ref": "#/components/schemas/Property"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Account"
+          "Property"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewAccount"
+                "$ref": "#/components/schemas/NewProperty"
               }
             }
           }
         }
       }
     },
-    "/accounts/count": {
+    "/properties/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Account"
+          "Property"
         ],
         "parameters": []
       }
     },
-    "/accounts/{id}": {
+    "/properties/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Account"
+                  "$ref": "#/components/schemas/Property"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Account"
+          "Property"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Account"
+                  "$ref": "#/components/schemas/Property"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Account"
+          "Property"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewAccount"
+                "$ref": "#/components/schemas/NewProperty"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Account"
+          "Property"
         ],
         "parameters": [
           {
@@ -514,69 +514,156 @@
   },
   "components": {
     "schemas": {
-      "Account": {
+      "Property": {
         "required": [
           "id",
-          "subject",
-          "amount",
-          "date",
-          "method",
-          "invoices"
+          "goods"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "subject": {
-            "type": "string",
-            "minLength": 5
-          },
-          "remark": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number"
-          },
-          "date": {
-            "type": "datetime"
-          },
-          "method": {
-            "type": "string",
-            "enum": [
-              "cash",
-              "bank",
-              "PayPal",
-              "Alipay",
-              "WeChat"
-            ]
-          },
-          "partner_ship": {
+          "goods": {
+            "type": "object",
             "required": [
               "id",
-              "title",
-              "level",
-              "type"
+              "name",
+              "specification",
+              "amount"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "title": {
+              "name": {
                 "type": "string"
               },
-              "activity": {
+              "specification": {
                 "type": "string"
               },
-              "level": {
-                "type": "integer"
+              "amount": {
+                "type": "integer",
+                "default": 1
               },
-              "organization": {
+              "films": {
+                "type": "array",
+                "items": {
+                  "required": [
+                    "id",
+                    "name",
+                    "hash",
+                    "mime",
+                    "size",
+                    "url",
+                    "provider"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "alternativeText": {
+                      "type": "string"
+                    },
+                    "caption": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "integer"
+                    },
+                    "height": {
+                      "type": "integer"
+                    },
+                    "formats": {
+                      "type": "object"
+                    },
+                    "hash": {
+                      "type": "string"
+                    },
+                    "ext": {
+                      "type": "string"
+                    },
+                    "mime": {
+                      "type": "string"
+                    },
+                    "size": {
+                      "type": "number"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "previewUrl": {
+                      "type": "string"
+                    },
+                    "provider": {
+                      "type": "string"
+                    },
+                    "provider_metadata": {
+                      "type": "object"
+                    },
+                    "related": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "remark": {
                 "type": "string"
               },
               "type": {
+                "type": "string",
+                "enum": [
+                  "textile",
+                  "mechanical",
+                  "electric",
+                  "digital"
+                ]
+              }
+            }
+          },
+          "account": {
+            "required": [
+              "id",
+              "subject",
+              "amount",
+              "date",
+              "method",
+              "invoices"
+            ],
+            "properties": {
+              "id": {
                 "type": "string"
               },
-              "accounts": {
+              "subject": {
+                "type": "string"
+              },
+              "remark": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "date": {
+                "type": "datetime"
+              },
+              "method": {
+                "type": "string"
+              },
+              "partner_ship": {
+                "type": "string"
+              },
+              "program": {
+                "type": "string"
+              },
+              "invoices": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -584,6 +671,9 @@
               },
               "verified": {
                 "type": "boolean"
+              },
+              "property": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -593,161 +683,47 @@
               }
             }
           },
-          "program": {
+          "custodians": {
             "required": [
               "id",
-              "title",
-              "start_time",
-              "end_time",
-              "type"
+              "username",
+              "email"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "title": {
+              "username": {
                 "type": "string"
               },
-              "start_time": {
-                "type": "datetime"
-              },
-              "end_time": {
-                "type": "datetime"
-              },
-              "summary": {
+              "email": {
                 "type": "string"
               },
-              "mentors": {
+              "provider": {
                 "type": "string"
               },
-              "activity": {
+              "password": {
                 "type": "string"
               },
-              "type": {
+              "resetPasswordToken": {
                 "type": "string"
               },
-              "place": {
-                "type": "string"
-              },
-              "evaluations": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "accounts": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "documents": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "verified": {
+              "confirmed": {
                 "type": "boolean"
               },
-              "created_by": {
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
                 "type": "string"
               },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "invoices": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "alternativeText": {
-                  "type": "string"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
-                  "type": "string"
-                },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "previewUrl": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "provider_metadata": {
-                  "type": "object"
-                },
-                "related": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "verified": {
-            "type": "boolean",
-            "default": false
-          },
-          "property": {
-            "required": [
-              "id",
-              "goods"
-            ],
-            "properties": {
-              "id": {
+              "name": {
                 "type": "string"
               },
-              "goods": {
-                "type": "component"
-              },
-              "account": {
+              "organizations": {
                 "type": "string"
               },
-              "custodians": {
+              "avatar": {
                 "type": "string"
               },
               "created_by": {
@@ -848,48 +824,121 @@
           }
         }
       },
-      "NewAccount": {
+      "NewProperty": {
         "required": [
-          "subject",
-          "amount",
-          "date",
-          "method"
+          "goods"
         ],
         "properties": {
-          "subject": {
-            "type": "string",
-            "minLength": 5
+          "goods": {
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "specification",
+              "amount"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "specification": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "integer",
+                "default": 1
+              },
+              "films": {
+                "type": "array",
+                "items": {
+                  "required": [
+                    "id",
+                    "name",
+                    "hash",
+                    "mime",
+                    "size",
+                    "url",
+                    "provider"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "alternativeText": {
+                      "type": "string"
+                    },
+                    "caption": {
+                      "type": "string"
+                    },
+                    "width": {
+                      "type": "integer"
+                    },
+                    "height": {
+                      "type": "integer"
+                    },
+                    "formats": {
+                      "type": "object"
+                    },
+                    "hash": {
+                      "type": "string"
+                    },
+                    "ext": {
+                      "type": "string"
+                    },
+                    "mime": {
+                      "type": "string"
+                    },
+                    "size": {
+                      "type": "number"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "previewUrl": {
+                      "type": "string"
+                    },
+                    "provider": {
+                      "type": "string"
+                    },
+                    "provider_metadata": {
+                      "type": "object"
+                    },
+                    "related": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "remark": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "textile",
+                  "mechanical",
+                  "electric",
+                  "digital"
+                ]
+              }
+            }
           },
-          "remark": {
+          "account": {
             "type": "string"
           },
-          "amount": {
-            "type": "number"
-          },
-          "date": {
-            "type": "datetime"
-          },
-          "method": {
-            "type": "string",
-            "enum": [
-              "cash",
-              "bank",
-              "PayPal",
-              "Alipay",
-              "WeChat"
-            ]
-          },
-          "partner_ship": {
-            "type": "string"
-          },
-          "program": {
-            "type": "string"
-          },
-          "verified": {
-            "type": "boolean",
-            "default": false
-          },
-          "property": {
+          "custodians": {
             "type": "string"
           },
           "created_by": {
@@ -904,7 +953,7 @@
   },
   "tags": [
     {
-      "name": "Account"
+      "name": "Property"
     }
   ]
 }

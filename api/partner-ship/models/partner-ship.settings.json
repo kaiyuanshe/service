@@ -42,6 +42,10 @@
     "accounts": {
       "collection": "account",
       "via": "partner_ship"
+    },
+    "verified": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
