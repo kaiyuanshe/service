@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/29/2020 9:56:44 PM"
+    "x-generation-date": "09/29/2020 10:49:09 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7916,6 +7916,9 @@
               "verified": {
                 "type": "boolean"
               },
+              "category": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -8697,6 +8700,9 @@
               "activity": {
                 "type": "string"
               },
+              "category": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -8970,6 +8976,9 @@
               },
               "verified": {
                 "type": "boolean"
+              },
+              "category": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -9709,7 +9718,8 @@
           "location",
           "capacity",
           "indoor",
-          "available_times"
+          "available_times",
+          "films"
         ],
         "properties": {
           "id": {
@@ -9961,6 +9971,76 @@
                     "electric",
                     "digital"
                   ]
+                }
+              }
+            }
+          },
+          "films": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
                 }
               }
             }
@@ -10377,7 +10457,8 @@
               "location",
               "capacity",
               "indoor",
-              "available_times"
+              "available_times",
+              "films"
             ],
             "properties": {
               "id": {
@@ -10406,6 +10487,12 @@
               },
               "equipments": {
                 "type": "component"
+              },
+              "films": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "created_by": {
                 "type": "string"
@@ -10578,6 +10665,29 @@
             "type": "boolean",
             "default": false
           },
+          "category": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "created_by": {
             "required": [
               "id",
@@ -10722,6 +10832,9 @@
           "verified": {
             "type": "boolean",
             "default": false
+          },
+          "category": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -11347,6 +11460,29 @@
               }
             }
           },
+          "category": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "created_by": {
             "required": [
               "id",
@@ -11461,6 +11597,9 @@
             }
           },
           "activity": {
+            "type": "string"
+          },
+          "category": {
             "type": "string"
           },
           "created_by": {

@@ -48,6 +48,17 @@
       "type": "component",
       "repeatable": true,
       "component": "supplies.goods"
+    },
+    "films": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true
     }
   }
 }

@@ -41,6 +41,9 @@
     },
     "activity": {
       "model": "activity"
+    },
+    "category": {
+      "model": "category"
     }
   }
 }

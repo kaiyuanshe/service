@@ -654,7 +654,8 @@
               "location",
               "capacity",
               "indoor",
-              "available_times"
+              "available_times",
+              "films"
             ],
             "properties": {
               "id": {
@@ -683,6 +684,12 @@
               },
               "equipments": {
                 "type": "component"
+              },
+              "films": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "created_by": {
                 "type": "string"
@@ -855,6 +862,29 @@
             "type": "boolean",
             "default": false
           },
+          "category": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "created_by": {
             "required": [
               "id",
@@ -999,6 +1029,9 @@
           "verified": {
             "type": "boolean",
             "default": false
+          },
+          "category": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

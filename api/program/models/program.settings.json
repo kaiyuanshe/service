@@ -69,6 +69,9 @@
     "verified": {
       "type": "boolean",
       "default": false
+    },
+    "category": {
+      "model": "category"
     }
   }
 }

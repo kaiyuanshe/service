@@ -695,6 +695,29 @@
               }
             }
           },
+          "category": {
+            "required": [
+              "id",
+              "name"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "created_by": {
             "required": [
               "id",
@@ -809,6 +832,9 @@
             }
           },
           "activity": {
+            "type": "string"
+          },
+          "category": {
             "type": "string"
           },
           "created_by": {
