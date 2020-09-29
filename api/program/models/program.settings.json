@@ -43,6 +43,9 @@
         "exhibition"
       ],
       "required": true
+    },
+    "place": {
+      "model": "place"
     }
   }
 }

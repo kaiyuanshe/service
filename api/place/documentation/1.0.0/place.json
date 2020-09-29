@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/programs": {
+    "/places": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Program"
+                    "$ref": "#/components/schemas/Place"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Place"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Program"
+                  "$ref": "#/components/schemas/Place"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Place"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProgram"
+                "$ref": "#/components/schemas/NewPlace"
               }
             }
           }
         }
       }
     },
-    "/programs/count": {
+    "/places/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Place"
         ],
         "parameters": []
       }
     },
-    "/programs/{id}": {
+    "/places/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Program"
+                  "$ref": "#/components/schemas/Place"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Place"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Program"
+                  "$ref": "#/components/schemas/Place"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Place"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProgram"
+                "$ref": "#/components/schemas/NewPlace"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Place"
         ],
         "parameters": [
           {
@@ -514,33 +514,70 @@
   },
   "components": {
     "schemas": {
-      "Program": {
+      "Place": {
         "required": [
           "id",
-          "title",
-          "start_time",
-          "end_time",
-          "type"
+          "name",
+          "location",
+          "capacity",
+          "indoor",
+          "available_times"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "title": {
+          "name": {
             "type": "string",
-            "minLength": 2
+            "minLength": 4
           },
-          "start_time": {
-            "type": "datetime"
-          },
-          "end_time": {
-            "type": "datetime"
-          },
-          "summary": {
+          "location": {
             "type": "string",
-            "minLength": 5
+            "minLength": 10
           },
-          "mentors": {
+          "capacity": {
+            "type": "integer"
+          },
+          "indoor": {
+            "type": "boolean",
+            "default": true
+          },
+          "available_times": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "end_date": {
+                  "type": "string"
+                },
+                "start_time": {
+                  "type": "time",
+                  "default": "00:00:00"
+                },
+                "end_time": {
+                  "type": "time",
+                  "default": "23:59:00"
+                },
+                "week": {
+                  "type": "string",
+                  "enum": [
+                    "weekdays",
+                    "weekends"
+                  ]
+                }
+              }
+            }
+          },
+          "contacts": {
             "required": [
               "id",
               "username",
@@ -588,14 +625,12 @@
               }
             }
           },
-          "activity": {
+          "owner": {
             "required": [
               "id",
               "name",
-              "description",
-              "start_time",
-              "end_time",
-              "location"
+              "logo",
+              "summary"
             ],
             "properties": {
               "id": {
@@ -607,25 +642,19 @@
               "slogan": {
                 "type": "string"
               },
-              "banner": {
+              "logo": {
                 "type": "string"
               },
-              "description": {
+              "link": {
                 "type": "string"
               },
-              "partner_ships": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "summary": {
+                "type": "string"
               },
-              "start_time": {
-                "type": "datetime"
+              "video": {
+                "type": "string"
               },
-              "end_time": {
-                "type": "datetime"
-              },
-              "location": {
+              "message_link": {
                 "type": "string"
               },
               "created_by": {
@@ -636,56 +665,33 @@
               }
             }
           },
-          "type": {
-            "type": "string",
-            "enum": [
-              "lecture",
-              "workshop",
-              "exhibition"
-            ]
-          },
-          "place": {
-            "required": [
-              "id",
-              "name",
-              "location",
-              "capacity",
-              "indoor",
-              "available_times"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "location": {
-                "type": "string"
-              },
-              "capacity": {
-                "type": "integer"
-              },
-              "indoor": {
-                "type": "boolean"
-              },
-              "available_times": {
-                "type": "component"
-              },
-              "contacts": {
-                "type": "string"
-              },
-              "owner": {
-                "type": "string"
-              },
-              "devices": {
-                "type": "component"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
+          "devices": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "name",
+                "amount"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "specification": {
+                  "type": "string",
+                  "minLength": 2
+                },
+                "amount": {
+                  "type": "integer",
+                  "default": 1
+                },
+                "remark": {
+                  "type": "string"
+                }
               }
             }
           },
@@ -779,44 +785,100 @@
           }
         }
       },
-      "NewProgram": {
+      "NewPlace": {
         "required": [
-          "title",
-          "start_time",
-          "end_time",
-          "type"
+          "name",
+          "location",
+          "capacity",
+          "indoor",
+          "available_times"
         ],
         "properties": {
-          "title": {
+          "name": {
             "type": "string",
-            "minLength": 2
+            "minLength": 4
           },
-          "start_time": {
-            "type": "datetime"
-          },
-          "end_time": {
-            "type": "datetime"
-          },
-          "summary": {
+          "location": {
             "type": "string",
-            "minLength": 5
+            "minLength": 10
           },
-          "mentors": {
+          "capacity": {
+            "type": "integer"
+          },
+          "indoor": {
+            "type": "boolean",
+            "default": true
+          },
+          "available_times": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "end_date": {
+                  "type": "string"
+                },
+                "start_time": {
+                  "type": "time",
+                  "default": "00:00:00"
+                },
+                "end_time": {
+                  "type": "time",
+                  "default": "23:59:00"
+                },
+                "week": {
+                  "type": "string",
+                  "enum": [
+                    "weekdays",
+                    "weekends"
+                  ]
+                }
+              }
+            }
+          },
+          "contacts": {
             "type": "string"
           },
-          "activity": {
+          "owner": {
             "type": "string"
           },
-          "type": {
-            "type": "string",
-            "enum": [
-              "lecture",
-              "workshop",
-              "exhibition"
-            ]
-          },
-          "place": {
-            "type": "string"
+          "devices": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "name",
+                "amount"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "specification": {
+                  "type": "string",
+                  "minLength": 2
+                },
+                "amount": {
+                  "type": "integer",
+                  "default": 1
+                },
+                "remark": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "created_by": {
             "type": "string"
@@ -830,7 +892,7 @@
   },
   "tags": [
     {
-      "name": "Program"
+      "name": "Place"
     }
   ]
 }
