@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/programs": {
+    "/contributions": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Program"
+                    "$ref": "#/components/schemas/Contribution"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Contribution"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Program"
+                  "$ref": "#/components/schemas/Contribution"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Contribution"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProgram"
+                "$ref": "#/components/schemas/NewContribution"
               }
             }
           }
         }
       }
     },
-    "/programs/count": {
+    "/contributions/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Contribution"
         ],
         "parameters": []
       }
     },
-    "/programs/{id}": {
+    "/contributions/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Program"
+                  "$ref": "#/components/schemas/Contribution"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Contribution"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Program"
+                  "$ref": "#/components/schemas/Contribution"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Contribution"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProgram"
+                "$ref": "#/components/schemas/NewContribution"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Contribution"
         ],
         "parameters": [
           {
@@ -514,13 +514,11 @@
   },
   "components": {
     "schemas": {
-      "Program": {
+      "Contribution": {
         "required": [
           "id",
           "title",
-          "start_time",
-          "end_time",
-          "type"
+          "content"
         ],
         "properties": {
           "id": {
@@ -528,158 +526,112 @@
           },
           "title": {
             "type": "string",
-            "minLength": 2
+            "minLength": 3
           },
-          "start_time": {
-            "type": "datetime"
-          },
-          "end_time": {
-            "type": "datetime"
-          },
-          "summary": {
+          "content": {
             "type": "string",
-            "minLength": 5
+            "minLength": 100
           },
-          "mentors": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "organizations": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
+          "assets": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },
-          "activity": {
+          "task": {
             "required": [
               "id",
-              "name",
-              "description",
-              "start_time",
-              "end_time",
-              "location"
+              "title",
+              "description"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "name": {
-                "type": "string"
-              },
-              "slogan": {
-                "type": "string"
-              },
-              "banner": {
+              "title": {
                 "type": "string"
               },
               "description": {
                 "type": "string"
               },
-              "partner_ships": {
+              "deadline": {
+                "type": "datetime"
+              },
+              "contributions": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
               },
-              "start_time": {
-                "type": "datetime"
-              },
-              "end_time": {
-                "type": "datetime"
-              },
-              "location": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "type": {
-            "type": "string",
-            "enum": [
-              "lecture",
-              "workshop",
-              "exhibition"
-            ]
-          },
-          "place": {
-            "required": [
-              "id",
-              "name",
-              "location",
-              "capacity",
-              "indoor",
-              "available_times"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "location": {
-                "type": "string"
-              },
-              "capacity": {
-                "type": "integer"
-              },
-              "indoor": {
-                "type": "boolean"
-              },
-              "available_times": {
-                "type": "component"
-              },
-              "contacts": {
-                "type": "string"
-              },
-              "owner": {
-                "type": "string"
-              },
-              "devices": {
-                "type": "component"
+              "assets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "created_by": {
                 "type": "string"
@@ -811,43 +763,21 @@
           }
         }
       },
-      "NewProgram": {
+      "NewContribution": {
         "required": [
           "title",
-          "start_time",
-          "end_time",
-          "type"
+          "content"
         ],
         "properties": {
           "title": {
             "type": "string",
-            "minLength": 2
+            "minLength": 3
           },
-          "start_time": {
-            "type": "datetime"
-          },
-          "end_time": {
-            "type": "datetime"
-          },
-          "summary": {
+          "content": {
             "type": "string",
-            "minLength": 5
+            "minLength": 100
           },
-          "mentors": {
-            "type": "string"
-          },
-          "activity": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string",
-            "enum": [
-              "lecture",
-              "workshop",
-              "exhibition"
-            ]
-          },
-          "place": {
+          "task": {
             "type": "string"
           },
           "evaluations": {
@@ -868,7 +798,7 @@
   },
   "tags": [
     {
-      "name": "Program"
+      "name": "Contribution"
     }
   ]
 }

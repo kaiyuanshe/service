@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/programs": {
+    "/evaluations": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Program"
+                    "$ref": "#/components/schemas/Evaluation"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Evaluation"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Program"
+                  "$ref": "#/components/schemas/Evaluation"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Evaluation"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProgram"
+                "$ref": "#/components/schemas/NewEvaluation"
               }
             }
           }
         }
       }
     },
-    "/programs/count": {
+    "/evaluations/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Evaluation"
         ],
         "parameters": []
       }
     },
-    "/programs/{id}": {
+    "/evaluations/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Program"
+                  "$ref": "#/components/schemas/Evaluation"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Evaluation"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Program"
+                  "$ref": "#/components/schemas/Evaluation"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Evaluation"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProgram"
+                "$ref": "#/components/schemas/NewEvaluation"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Evaluation"
         ],
         "parameters": [
           {
@@ -514,71 +514,53 @@
   },
   "components": {
     "schemas": {
-      "Program": {
+      "Evaluation": {
         "required": [
           "id",
-          "title",
-          "start_time",
-          "end_time",
-          "type"
+          "score"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "title": {
-            "type": "string",
-            "minLength": 2
+          "score": {
+            "type": "integer",
+            "default": 0
           },
-          "start_time": {
-            "type": "datetime"
-          },
-          "end_time": {
-            "type": "datetime"
-          },
-          "summary": {
+          "detail": {
             "type": "string",
             "minLength": 5
           },
-          "mentors": {
+          "contribution": {
             "required": [
               "id",
-              "username",
-              "email"
+              "title",
+              "content"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "username": {
+              "title": {
                 "type": "string"
               },
-              "email": {
+              "content": {
                 "type": "string"
               },
-              "provider": {
+              "assets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "task": {
                 "type": "string"
               },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "organizations": {
-                "type": "string"
+              "evaluations": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "created_by": {
                 "type": "string"
@@ -588,36 +570,20 @@
               }
             }
           },
-          "activity": {
+          "program": {
             "required": [
               "id",
-              "name",
-              "description",
+              "title",
               "start_time",
               "end_time",
-              "location"
+              "type"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "name": {
+              "title": {
                 "type": "string"
-              },
-              "slogan": {
-                "type": "string"
-              },
-              "banner": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "partner_ships": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
               },
               "start_time": {
                 "type": "datetime"
@@ -625,99 +591,32 @@
               "end_time": {
                 "type": "datetime"
               },
-              "location": {
+              "summary": {
                 "type": "string"
               },
-              "created_by": {
+              "mentors": {
                 "type": "string"
               },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "type": {
-            "type": "string",
-            "enum": [
-              "lecture",
-              "workshop",
-              "exhibition"
-            ]
-          },
-          "place": {
-            "required": [
-              "id",
-              "name",
-              "location",
-              "capacity",
-              "indoor",
-              "available_times"
-            ],
-            "properties": {
-              "id": {
+              "activity": {
                 "type": "string"
               },
-              "name": {
+              "type": {
                 "type": "string"
               },
-              "location": {
+              "place": {
                 "type": "string"
               },
-              "capacity": {
-                "type": "integer"
-              },
-              "indoor": {
-                "type": "boolean"
-              },
-              "available_times": {
-                "type": "component"
-              },
-              "contacts": {
-                "type": "string"
-              },
-              "owner": {
-                "type": "string"
-              },
-              "devices": {
-                "type": "component"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "evaluations": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "score"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "score": {
-                  "type": "integer"
-                },
-                "detail": {
-                  "type": "string"
-                },
-                "contribution": {
-                  "type": "string"
-                },
-                "program": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+              "evaluations": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
@@ -811,50 +710,24 @@
           }
         }
       },
-      "NewProgram": {
+      "NewEvaluation": {
         "required": [
-          "title",
-          "start_time",
-          "end_time",
-          "type"
+          "score"
         ],
         "properties": {
-          "title": {
-            "type": "string",
-            "minLength": 2
+          "score": {
+            "type": "integer",
+            "default": 0
           },
-          "start_time": {
-            "type": "datetime"
-          },
-          "end_time": {
-            "type": "datetime"
-          },
-          "summary": {
+          "detail": {
             "type": "string",
             "minLength": 5
           },
-          "mentors": {
+          "contribution": {
             "type": "string"
           },
-          "activity": {
+          "program": {
             "type": "string"
-          },
-          "type": {
-            "type": "string",
-            "enum": [
-              "lecture",
-              "workshop",
-              "exhibition"
-            ]
-          },
-          "place": {
-            "type": "string"
-          },
-          "evaluations": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "created_by": {
             "type": "string"
@@ -868,7 +741,7 @@
   },
   "tags": [
     {
-      "name": "Program"
+      "name": "Evaluation"
     }
   ]
 }

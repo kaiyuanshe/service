@@ -19,9 +19,12 @@
 |     User     | 外部注册用户 |        非后台用户        |
 | Organization |   外部组织   | 公司、开源社区、公益组织 |
 |    Place     |     场地     |        室内、户外        |
+|     Task     |     任务     |                          |
+| Contribution |   任务贡献   |                          |
 |   Program    |   活动环节   |    演讲、工作坊、展位    |
 |   Activity   |     活动     |     各类小中大型活动     |
 | PartnerShip  |   合作关系   |      活动合作、赞助      |
+|  Evaluation  |     评价     |   贡献、活动环节的评分   |
 
 ### 组件
 

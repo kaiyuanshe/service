@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/programs": {
+    "/tasks": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Program"
+                    "$ref": "#/components/schemas/Task"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Task"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Program"
+                  "$ref": "#/components/schemas/Task"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Task"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProgram"
+                "$ref": "#/components/schemas/NewTask"
               }
             }
           }
         }
       }
     },
-    "/programs/count": {
+    "/tasks/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Task"
         ],
         "parameters": []
       }
     },
-    "/programs/{id}": {
+    "/tasks/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Program"
+                  "$ref": "#/components/schemas/Task"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Task"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Program"
+                  "$ref": "#/components/schemas/Task"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Task"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProgram"
+                "$ref": "#/components/schemas/NewTask"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Program"
+          "Task"
         ],
         "parameters": [
           {
@@ -514,13 +514,11 @@
   },
   "components": {
     "schemas": {
-      "Program": {
+      "Task": {
         "required": [
           "id",
           "title",
-          "start_time",
-          "end_time",
-          "type"
+          "description"
         ],
         "properties": {
           "id": {
@@ -528,188 +526,116 @@
           },
           "title": {
             "type": "string",
-            "minLength": 2
-          },
-          "start_time": {
-            "type": "datetime"
-          },
-          "end_time": {
-            "type": "datetime"
-          },
-          "summary": {
-            "type": "string",
             "minLength": 5
           },
-          "mentors": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "organizations": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "activity": {
-            "required": [
-              "id",
-              "name",
-              "description",
-              "start_time",
-              "end_time",
-              "location"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "slogan": {
-                "type": "string"
-              },
-              "banner": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              },
-              "partner_ships": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "start_time": {
-                "type": "datetime"
-              },
-              "end_time": {
-                "type": "datetime"
-              },
-              "location": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "type": {
+          "description": {
             "type": "string",
-            "enum": [
-              "lecture",
-              "workshop",
-              "exhibition"
-            ]
+            "minLength": 100
           },
-          "place": {
-            "required": [
-              "id",
-              "name",
-              "location",
-              "capacity",
-              "indoor",
-              "available_times"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "location": {
-                "type": "string"
-              },
-              "capacity": {
-                "type": "integer"
-              },
-              "indoor": {
-                "type": "boolean"
-              },
-              "available_times": {
-                "type": "component"
-              },
-              "contacts": {
-                "type": "string"
-              },
-              "owner": {
-                "type": "string"
-              },
-              "devices": {
-                "type": "component"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "deadline": {
+            "type": "datetime"
           },
-          "evaluations": {
+          "contributions": {
             "type": "array",
             "items": {
               "required": [
                 "id",
-                "score"
+                "title",
+                "content"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "score": {
+                "title": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "assets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "task": {
+                  "type": "string"
+                },
+                "evaluations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
                   "type": "integer"
                 },
-                "detail": {
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
                   "type": "string"
                 },
-                "contribution": {
+                "ext": {
                   "type": "string"
                 },
-                "program": {
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
                   "type": "string"
                 },
                 "created_by": {
@@ -811,46 +737,24 @@
           }
         }
       },
-      "NewProgram": {
+      "NewTask": {
         "required": [
           "title",
-          "start_time",
-          "end_time",
-          "type"
+          "description"
         ],
         "properties": {
           "title": {
             "type": "string",
-            "minLength": 2
-          },
-          "start_time": {
-            "type": "datetime"
-          },
-          "end_time": {
-            "type": "datetime"
-          },
-          "summary": {
-            "type": "string",
             "minLength": 5
           },
-          "mentors": {
-            "type": "string"
-          },
-          "activity": {
-            "type": "string"
-          },
-          "type": {
+          "description": {
             "type": "string",
-            "enum": [
-              "lecture",
-              "workshop",
-              "exhibition"
-            ]
+            "minLength": 100
           },
-          "place": {
-            "type": "string"
+          "deadline": {
+            "type": "datetime"
           },
-          "evaluations": {
+          "contributions": {
             "type": "array",
             "items": {
               "type": "string"
@@ -868,7 +772,7 @@
   },
   "tags": [
     {
-      "name": "Program"
+      "name": "Task"
     }
   ]
 }

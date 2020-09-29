@@ -46,6 +46,10 @@
     },
     "place": {
       "model": "place"
+    },
+    "evaluations": {
+      "collection": "evaluation",
+      "via": "program"
     }
   }
 }

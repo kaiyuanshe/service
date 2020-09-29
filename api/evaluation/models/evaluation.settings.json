@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "evaluations",
+  "info": {
+    "name": "Evaluation"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "score": {
+      "type": "integer",
+      "required": true,
+      "max": 5,
+      "min": 0,
+      "default": 0
+    },
+    "detail": {
+      "type": "text",
+      "unique": true,
+      "minLength": 5
+    },
+    "contribution": {
+      "model": "contribution",
+      "via": "evaluations"
+    },
+    "program": {
+      "via": "evaluations",
+      "model": "program"
+    }
+  }
+}
