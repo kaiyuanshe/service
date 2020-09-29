@@ -519,7 +519,8 @@
           "id",
           "title",
           "start_time",
-          "end_time"
+          "end_time",
+          "type"
         ],
         "properties": {
           "id": {
@@ -737,7 +738,8 @@
         "required": [
           "title",
           "start_time",
-          "end_time"
+          "end_time",
+          "type"
         ],
         "properties": {
           "title": {

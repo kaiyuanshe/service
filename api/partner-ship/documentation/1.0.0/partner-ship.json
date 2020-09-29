@@ -531,7 +531,8 @@
         "required": [
           "id",
           "title",
-          "level"
+          "level",
+          "type"
         ],
         "properties": {
           "id": {
@@ -632,6 +633,65 @@
               }
             }
           },
+          "type": {
+            "type": "string",
+            "enum": [
+              "sponsor",
+              "place",
+              "media",
+              "community",
+              "device",
+              "travel",
+              "vendor"
+            ]
+          },
+          "accounts": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "subject",
+                "amount",
+                "date",
+                "method"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "subject": {
+                  "type": "string"
+                },
+                "remark": {
+                  "type": "string"
+                },
+                "amount": {
+                  "type": "number"
+                },
+                "date": {
+                  "type": "datetime"
+                },
+                "method": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "organization": {
+                  "type": "string"
+                },
+                "partner_ship": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "created_by": {
             "required": [
               "id",
@@ -725,7 +785,8 @@
       "NewPartner-ship": {
         "required": [
           "title",
-          "level"
+          "level",
+          "type"
         ],
         "properties": {
           "title": {
@@ -740,6 +801,24 @@
           },
           "organization": {
             "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "sponsor",
+              "place",
+              "media",
+              "community",
+              "device",
+              "travel",
+              "vendor"
+            ]
+          },
+          "accounts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"

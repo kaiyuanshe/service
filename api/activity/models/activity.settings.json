@@ -35,8 +35,8 @@
       "minLength": 100
     },
     "partner_ships": {
-      "collection": "partner-ship",
-      "via": "activity"
+      "via": "activity",
+      "collection": "partner-ship"
     },
     "start_time": {
       "type": "datetime",

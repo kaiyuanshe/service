@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/activities": {
+    "/accounts": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Activity"
+                    "$ref": "#/components/schemas/Account"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Activity"
+          "Account"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Activity"
+                  "$ref": "#/components/schemas/Account"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Activity"
+          "Account"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewActivity"
+                "$ref": "#/components/schemas/NewAccount"
               }
             }
           }
         }
       }
     },
-    "/activities/count": {
+    "/accounts/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Activity"
+          "Account"
         ],
         "parameters": []
       }
     },
-    "/activities/{id}": {
+    "/accounts/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Activity"
+                  "$ref": "#/components/schemas/Account"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Activity"
+          "Account"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Activity"
+                  "$ref": "#/components/schemas/Account"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Activity"
+          "Account"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewActivity"
+                "$ref": "#/components/schemas/NewAccount"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Activity"
+          "Account"
         ],
         "parameters": [
           {
@@ -514,84 +514,79 @@
   },
   "components": {
     "schemas": {
-      "Activity": {
+      "Account": {
         "required": [
           "id",
-          "name",
-          "description",
-          "start_time",
-          "end_time",
-          "location"
+          "subject",
+          "amount",
+          "date",
+          "method"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "subject": {
             "type": "string",
-            "minLength": 2
+            "minLength": 5
           },
-          "slogan": {
+          "remark": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "date": {
+            "type": "datetime"
+          },
+          "method": {
             "type": "string",
-            "minLength": 3
+            "enum": [
+              "cash",
+              "bank",
+              "PayPal",
+              "Alipay",
+              "WeChat"
+            ]
           },
-          "banner": {
+          "user": {
             "required": [
               "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
+              "username",
+              "email"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "name": {
+              "username": {
                 "type": "string"
               },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
+              "email": {
                 "type": "string"
               },
               "provider": {
                 "type": "string"
               },
-              "provider_metadata": {
-                "type": "object"
+              "password": {
+                "type": "string"
               },
-              "related": {
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "organizations": {
                 "type": "string"
               },
               "created_by": {
@@ -602,62 +597,85 @@
               }
             }
           },
-          "description": {
-            "type": "string",
-            "minLength": 100
-          },
-          "partner_ships": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title",
-                "level",
-                "type"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "activity": {
-                  "type": "string"
-                },
-                "level": {
-                  "type": "integer"
-                },
-                "organization": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string"
-                },
-                "accounts": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
+          "organization": {
+            "required": [
+              "id",
+              "name",
+              "logo",
+              "summary"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slogan": {
+                "type": "string"
+              },
+              "logo": {
+                "type": "string"
+              },
+              "link": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "video": {
+                "type": "string"
+              },
+              "message_link": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
-          "start_time": {
-            "type": "datetime"
-          },
-          "end_time": {
-            "type": "datetime"
-          },
-          "location": {
-            "type": "string",
-            "minLength": 10
+          "partner_ship": {
+            "required": [
+              "id",
+              "title",
+              "level",
+              "type"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "activity": {
+                "type": "string"
+              },
+              "level": {
+                "type": "integer"
+              },
+              "organization": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "accounts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "created_by": {
             "required": [
@@ -749,42 +767,45 @@
           }
         }
       },
-      "NewActivity": {
+      "NewAccount": {
         "required": [
-          "name",
-          "description",
-          "start_time",
-          "end_time",
-          "location"
+          "subject",
+          "amount",
+          "date",
+          "method"
         ],
         "properties": {
-          "name": {
+          "subject": {
             "type": "string",
-            "minLength": 2
+            "minLength": 5
           },
-          "slogan": {
-            "type": "string",
-            "minLength": 3
+          "remark": {
+            "type": "string"
           },
-          "description": {
-            "type": "string",
-            "minLength": 100
+          "amount": {
+            "type": "number"
           },
-          "partner_ships": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "start_time": {
+          "date": {
             "type": "datetime"
           },
-          "end_time": {
-            "type": "datetime"
-          },
-          "location": {
+          "method": {
             "type": "string",
-            "minLength": 10
+            "enum": [
+              "cash",
+              "bank",
+              "PayPal",
+              "Alipay",
+              "WeChat"
+            ]
+          },
+          "user": {
+            "type": "string"
+          },
+          "organization": {
+            "type": "string"
+          },
+          "partner_ship": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -798,7 +819,7 @@
   },
   "tags": [
     {
-      "name": "Activity"
+      "name": "Account"
     }
   ]
 }

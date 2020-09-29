@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accounts",
+  "info": {
+    "name": "Account"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "subject": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 5
+    },
+    "remark": {
+      "type": "text",
+      "unique": false
+    },
+    "amount": {
+      "type": "decimal",
+      "required": true
+    },
+    "date": {
+      "type": "datetime",
+      "required": true
+    },
+    "method": {
+      "type": "enumeration",
+      "enum": [
+        "cash",
+        "bank",
+        "PayPal",
+        "Alipay",
+        "WeChat"
+      ],
+      "required": true
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "organization": {
+      "model": "organization"
+    },
+    "partner_ship": {
+      "via": "accounts",
+      "model": "partner-ship"
+    }
+  }
+}

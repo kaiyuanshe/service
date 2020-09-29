@@ -12,12 +12,12 @@
     "title": {
       "type": "string",
       "required": true,
-      "unique": false,
+      "unique": true,
       "minLength": 2
     },
     "activity": {
-      "via": "partner_ships",
-      "model": "activity"
+      "model": "activity",
+      "via": "partner_ships"
     },
     "level": {
       "type": "integer",
@@ -25,6 +25,23 @@
     },
     "organization": {
       "model": "organization"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "sponsor",
+        "place",
+        "media",
+        "community",
+        "device",
+        "travel",
+        "vendor"
+      ],
+      "required": true
+    },
+    "accounts": {
+      "collection": "account",
+      "via": "partner_ship"
     }
   }
 }

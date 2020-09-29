@@ -41,7 +41,8 @@
         "lecture",
         "workshop",
         "exhibition"
-      ]
+      ],
+      "required": true
     }
   }
 }
