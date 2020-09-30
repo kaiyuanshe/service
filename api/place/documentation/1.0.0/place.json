@@ -774,6 +774,10 @@
                     "electric",
                     "digital"
                   ]
+                },
+                "code": {
+                  "type": "string",
+                  "minLength": 12
                 }
               }
             }
@@ -1108,6 +1112,10 @@
                     "electric",
                     "digital"
                   ]
+                },
+                "code": {
+                  "type": "string",
+                  "minLength": 12
                 }
               }
             }

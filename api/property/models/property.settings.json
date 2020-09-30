@@ -22,6 +22,9 @@
     "custodians": {
       "plugin": "users-permissions",
       "collection": "user"
+    },
+    "deprecated_at": {
+      "type": "datetime"
     }
   }
 }

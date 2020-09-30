@@ -885,6 +885,46 @@
               }
             }
           },
+          "organization": {
+            "required": [
+              "id",
+              "name",
+              "logo",
+              "summary"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slogan": {
+                "type": "string"
+              },
+              "logo": {
+                "type": "string"
+              },
+              "link": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "video": {
+                "type": "string"
+              },
+              "message_link": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
           "created_by": {
             "required": [
               "id",
@@ -1031,6 +1071,9 @@
             "default": false
           },
           "category": {
+            "type": "string"
+          },
+          "organization": {
             "type": "string"
           },
           "created_by": {

@@ -72,6 +72,9 @@
     },
     "category": {
       "model": "category"
+    },
+    "organization": {
+      "model": "organization"
     }
   }
 }

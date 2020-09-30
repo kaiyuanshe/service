@@ -653,6 +653,9 @@
               "category": {
                 "type": "string"
               },
+              "organization": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -752,6 +755,9 @@
               },
               "custodians": {
                 "type": "string"
+              },
+              "deprecated_at": {
+                "type": "datetime"
               },
               "created_by": {
                 "type": "string"

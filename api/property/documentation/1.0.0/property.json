@@ -626,6 +626,10 @@
                   "electric",
                   "digital"
                 ]
+              },
+              "code": {
+                "type": "string",
+                "minLength": 12
               }
             }
           },
@@ -733,6 +737,9 @@
                 "type": "string"
               }
             }
+          },
+          "deprecated_at": {
+            "type": "datetime"
           },
           "created_by": {
             "required": [
@@ -932,6 +939,10 @@
                   "electric",
                   "digital"
                 ]
+              },
+              "code": {
+                "type": "string",
+                "minLength": 12
               }
             }
           },
@@ -940,6 +951,9 @@
           },
           "custodians": {
             "type": "string"
+          },
+          "deprecated_at": {
+            "type": "datetime"
           },
           "created_by": {
             "type": "string"
