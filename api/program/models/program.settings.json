@@ -75,6 +75,11 @@
     },
     "organization": {
       "model": "organization"
+    },
+    "live_link": {
+      "type": "string",
+      "unique": false,
+      "minLength": 10
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/accounts": {
+    "/comments": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Account"
+                    "$ref": "#/components/schemas/Comment"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Account"
+          "Comment"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Account"
+                  "$ref": "#/components/schemas/Comment"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Account"
+          "Comment"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewAccount"
+                "$ref": "#/components/schemas/NewComment"
               }
             }
           }
         }
       }
     },
-    "/accounts/count": {
+    "/comments/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Account"
+          "Comment"
         ],
         "parameters": []
       }
     },
-    "/accounts/{id}": {
+    "/comments/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Account"
+                  "$ref": "#/components/schemas/Comment"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Account"
+          "Comment"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Account"
+                  "$ref": "#/components/schemas/Comment"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Account"
+          "Comment"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewAccount"
+                "$ref": "#/components/schemas/NewComment"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Account"
+          "Comment"
         ],
         "parameters": [
           {
@@ -514,84 +514,18 @@
   },
   "components": {
     "schemas": {
-      "Account": {
+      "Comment": {
         "required": [
           "id",
-          "subject",
-          "amount",
-          "date",
-          "method",
-          "invoices"
+          "content"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "subject": {
+          "content": {
             "type": "string",
-            "minLength": 5
-          },
-          "remark": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number"
-          },
-          "date": {
-            "type": "datetime"
-          },
-          "method": {
-            "type": "string",
-            "enum": [
-              "cash",
-              "bank",
-              "PayPal",
-              "Alipay",
-              "WeChat"
-            ]
-          },
-          "partner_ship": {
-            "required": [
-              "id",
-              "title",
-              "level",
-              "type"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "title": {
-                "type": "string"
-              },
-              "activity": {
-                "type": "string"
-              },
-              "level": {
-                "type": "integer"
-              },
-              "organization": {
-                "type": "string"
-              },
-              "type": {
-                "type": "string"
-              },
-              "accounts": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "verified": {
-                "type": "boolean"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+            "minLength": 10
           },
           "program": {
             "required": [
@@ -667,100 +601,23 @@
               }
             }
           },
-          "invoices": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "alternativeText": {
-                  "type": "string"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
-                  "type": "string"
-                },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "previewUrl": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "provider_metadata": {
-                  "type": "object"
-                },
-                "related": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "verified": {
-            "type": "boolean",
-            "default": false
-          },
-          "property": {
+          "comment": {
             "required": [
               "id",
-              "goods"
+              "content"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "goods": {
-                "type": "component"
-              },
-              "account": {
+              "content": {
                 "type": "string"
               },
-              "custodians": {
+              "program": {
                 "type": "string"
               },
-              "deprecated_at": {
-                "type": "datetime"
+              "comment": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -860,48 +717,19 @@
           }
         }
       },
-      "NewAccount": {
+      "NewComment": {
         "required": [
-          "subject",
-          "amount",
-          "date",
-          "method"
+          "content"
         ],
         "properties": {
-          "subject": {
+          "content": {
             "type": "string",
-            "minLength": 5
-          },
-          "remark": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number"
-          },
-          "date": {
-            "type": "datetime"
-          },
-          "method": {
-            "type": "string",
-            "enum": [
-              "cash",
-              "bank",
-              "PayPal",
-              "Alipay",
-              "WeChat"
-            ]
-          },
-          "partner_ship": {
-            "type": "string"
+            "minLength": 10
           },
           "program": {
             "type": "string"
           },
-          "verified": {
-            "type": "boolean",
-            "default": false
-          },
-          "property": {
+          "comment": {
             "type": "string"
           },
           "created_by": {
@@ -916,7 +744,7 @@
   },
   "tags": [
     {
-      "name": "Account"
+      "name": "Comment"
     }
   ]
 }

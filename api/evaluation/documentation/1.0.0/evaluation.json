@@ -633,6 +633,9 @@
               "organization": {
                 "type": "string"
               },
+              "live_link": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },

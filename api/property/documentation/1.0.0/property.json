@@ -730,6 +730,9 @@
               "avatar": {
                 "type": "string"
               },
+              "summary": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },

@@ -1361,6 +1361,10 @@
               }
             }
           },
+          "summary": {
+            "type": "string",
+            "minLength": 3
+          },
           "created_by": {
             "required": [
               "id",
@@ -1491,6 +1495,10 @@
           },
           "organizations": {
             "type": "string"
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 3
           },
           "created_by": {
             "type": "string"

@@ -68,6 +68,11 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "summary": {
+      "type": "text",
+      "unique": true,
+      "minLength": 3
     }
   }
 }

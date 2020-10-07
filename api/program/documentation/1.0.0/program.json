@@ -583,6 +583,9 @@
               "avatar": {
                 "type": "string"
               },
+              "summary": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -925,6 +928,10 @@
               }
             }
           },
+          "live_link": {
+            "type": "string",
+            "minLength": 10
+          },
           "created_by": {
             "required": [
               "id",
@@ -1075,6 +1082,10 @@
           },
           "organization": {
             "type": "string"
+          },
+          "live_link": {
+            "type": "string",
+            "minLength": 10
           },
           "created_by": {
             "type": "string"
