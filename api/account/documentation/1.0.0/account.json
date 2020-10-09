@@ -585,6 +585,9 @@
               "verified": {
                 "type": "boolean"
               },
+              "creator": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -657,6 +660,9 @@
                 "type": "string"
               },
               "live_link": {
+                "type": "string"
+              },
+              "project": {
                 "type": "string"
               },
               "created_by": {
@@ -770,91 +776,49 @@
               }
             }
           },
-          "created_by": {
+          "project": {
             "required": [
               "id",
-              "email"
+              "name",
+              "start_date",
+              "link"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "firstname": {
+              "name": {
                 "type": "string"
               },
-              "lastname": {
+              "start_date": {
                 "type": "string"
               },
-              "username": {
+              "end_date": {
                 "type": "string"
               },
-              "email": {
+              "members": {
                 "type": "string"
               },
-              "password": {
+              "organization": {
                 "type": "string"
               },
-              "resetPasswordToken": {
+              "logo": {
                 "type": "string"
               },
-              "registrationToken": {
+              "link": {
                 "type": "string"
               },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
-              }
-            }
-          },
-          "updated_by": {
-            "required": [
-              "id",
-              "email"
-            ],
-            "properties": {
-              "id": {
+              "summary": {
                 "type": "string"
               },
-              "firstname": {
+              "published_at": {
+                "type": "datetime"
+              },
+              "created_by": {
                 "type": "string"
               },
-              "lastname": {
+              "updated_by": {
                 "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "blocked": {
-                "type": "boolean"
               }
             }
           }
@@ -902,6 +866,9 @@
             "default": false
           },
           "property": {
+            "type": "string"
+          },
+          "project": {
             "type": "string"
           },
           "created_by": {

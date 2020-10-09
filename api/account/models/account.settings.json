@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "accounts",
   "info": {
-    "name": "Account"
+    "name": "Account",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "subject": {
@@ -39,12 +41,12 @@
       "required": true
     },
     "partner_ship": {
-      "via": "accounts",
-      "model": "partner-ship"
+      "model": "partner-ship",
+      "via": "accounts"
     },
     "program": {
-      "via": "accounts",
-      "model": "program"
+      "model": "program",
+      "via": "accounts"
     },
     "invoices": {
       "collection": "file",
@@ -62,8 +64,11 @@
       "default": false
     },
     "property": {
-      "via": "account",
-      "model": "property"
+      "model": "property",
+      "via": "account"
+    },
+    "project": {
+      "model": "project"
     }
   }
 }

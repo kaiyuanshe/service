@@ -16,8 +16,8 @@
       "required": true
     },
     "account": {
-      "model": "account",
-      "via": "property"
+      "via": "property",
+      "model": "account"
     },
     "custodians": {
       "plugin": "users-permissions",

@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "partner_ships",
   "info": {
-    "name": "PartnerShip"
+    "name": "PartnerShip",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "title": {
@@ -16,8 +18,8 @@
       "minLength": 2
     },
     "activity": {
-      "model": "activity",
-      "via": "partner_ships"
+      "via": "partner_ships",
+      "model": "activity"
     },
     "level": {
       "type": "integer",
@@ -40,12 +42,16 @@
       "required": true
     },
     "accounts": {
-      "collection": "account",
-      "via": "partner_ship"
+      "via": "partner_ship",
+      "collection": "account"
     },
     "verified": {
       "type": "boolean",
       "default": false
+    },
+    "creator": {
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }

@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "evaluations",
   "info": {
-    "name": "Evaluation"
+    "name": "Evaluation",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "score": {
@@ -28,6 +30,10 @@
     "program": {
       "via": "evaluations",
       "model": "program"
+    },
+    "creator": {
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }

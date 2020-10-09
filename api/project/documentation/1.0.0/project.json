@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/places": {
+    "/projects": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Place"
+                    "$ref": "#/components/schemas/Project"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Place"
+          "Project"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Place"
+                  "$ref": "#/components/schemas/Project"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Place"
+          "Project"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPlace"
+                "$ref": "#/components/schemas/NewProject"
               }
             }
           }
         }
       }
     },
-    "/places/count": {
+    "/projects/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Place"
+          "Project"
         ],
         "parameters": []
       }
     },
-    "/places/{id}": {
+    "/projects/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Place"
+                  "$ref": "#/components/schemas/Project"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Place"
+          "Project"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Place"
+                  "$ref": "#/components/schemas/Project"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Place"
+          "Project"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPlace"
+                "$ref": "#/components/schemas/NewProject"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Place"
+          "Project"
         ],
         "parameters": [
           {
@@ -514,15 +514,12 @@
   },
   "components": {
     "schemas": {
-      "Place": {
+      "Project": {
         "required": [
           "id",
           "name",
-          "location",
-          "capacity",
-          "indoor",
-          "available_times",
-          "films"
+          "start_date",
+          "link"
         ],
         "properties": {
           "id": {
@@ -530,55 +527,15 @@
           },
           "name": {
             "type": "string",
-            "minLength": 4
+            "minLength": 3
           },
-          "location": {
-            "type": "string",
-            "minLength": 10
+          "start_date": {
+            "type": "string"
           },
-          "capacity": {
-            "type": "integer"
+          "end_date": {
+            "type": "string"
           },
-          "indoor": {
-            "type": "boolean",
-            "default": true
-          },
-          "available_times": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "start_date": {
-                  "type": "string"
-                },
-                "end_date": {
-                  "type": "string"
-                },
-                "start_time": {
-                  "type": "time",
-                  "default": "00:00:00"
-                },
-                "end_time": {
-                  "type": "time",
-                  "default": "23:59:00"
-                },
-                "week": {
-                  "type": "string",
-                  "enum": [
-                    "weekdays",
-                    "weekends"
-                  ]
-                }
-              }
-            }
-          },
-          "contacts": {
+          "members": {
             "required": [
               "id",
               "username",
@@ -632,7 +589,7 @@
               }
             }
           },
-          "owner": {
+          "organization": {
             "required": [
               "id",
               "name",
@@ -672,368 +629,119 @@
               }
             }
           },
-          "equipments": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "name",
-                "specification",
-                "amount"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "specification": {
-                  "type": "string"
-                },
-                "amount": {
-                  "type": "integer",
-                  "default": 1
-                },
-                "films": {
-                  "type": "array",
-                  "items": {
-                    "required": [
-                      "id",
-                      "name",
-                      "hash",
-                      "mime",
-                      "size",
-                      "url",
-                      "provider"
-                    ],
-                    "properties": {
-                      "id": {
-                        "type": "string"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "alternativeText": {
-                        "type": "string"
-                      },
-                      "caption": {
-                        "type": "string"
-                      },
-                      "width": {
-                        "type": "integer"
-                      },
-                      "height": {
-                        "type": "integer"
-                      },
-                      "formats": {
-                        "type": "object"
-                      },
-                      "hash": {
-                        "type": "string"
-                      },
-                      "ext": {
-                        "type": "string"
-                      },
-                      "mime": {
-                        "type": "string"
-                      },
-                      "size": {
-                        "type": "number"
-                      },
-                      "url": {
-                        "type": "string"
-                      },
-                      "previewUrl": {
-                        "type": "string"
-                      },
-                      "provider": {
-                        "type": "string"
-                      },
-                      "provider_metadata": {
-                        "type": "object"
-                      },
-                      "related": {
-                        "type": "string"
-                      },
-                      "created_by": {
-                        "type": "string"
-                      },
-                      "updated_by": {
-                        "type": "string"
-                      }
-                    }
-                  }
-                },
-                "remark": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string",
-                  "enum": [
-                    "textile",
-                    "mechanical",
-                    "electric",
-                    "digital"
-                  ]
-                },
-                "code": {
-                  "type": "string",
-                  "minLength": 12
-                }
+          "logo": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
-          "films": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "alternativeText": {
-                  "type": "string"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
-                  "type": "string"
-                },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "previewUrl": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "provider_metadata": {
-                  "type": "object"
-                },
-                "related": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "link": {
+            "type": "string",
+            "minLength": 10
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 10
+          },
+          "published_at": {
+            "type": "datetime"
           }
         }
       },
-      "NewPlace": {
+      "NewProject": {
         "required": [
           "name",
-          "location",
-          "capacity",
-          "indoor",
-          "available_times"
+          "start_date",
+          "link"
         ],
         "properties": {
           "name": {
             "type": "string",
-            "minLength": 4
+            "minLength": 3
           },
-          "location": {
+          "start_date": {
+            "type": "string"
+          },
+          "end_date": {
+            "type": "string"
+          },
+          "members": {
+            "type": "string"
+          },
+          "organization": {
+            "type": "string"
+          },
+          "link": {
             "type": "string",
             "minLength": 10
           },
-          "capacity": {
-            "type": "integer"
+          "summary": {
+            "type": "string",
+            "minLength": 10
           },
-          "indoor": {
-            "type": "boolean",
-            "default": true
-          },
-          "available_times": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "start_date": {
-                  "type": "string"
-                },
-                "end_date": {
-                  "type": "string"
-                },
-                "start_time": {
-                  "type": "time",
-                  "default": "00:00:00"
-                },
-                "end_time": {
-                  "type": "time",
-                  "default": "23:59:00"
-                },
-                "week": {
-                  "type": "string",
-                  "enum": [
-                    "weekdays",
-                    "weekends"
-                  ]
-                }
-              }
-            }
-          },
-          "contacts": {
-            "type": "string"
-          },
-          "owner": {
-            "type": "string"
-          },
-          "equipments": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id",
-                "name",
-                "specification",
-                "amount"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "specification": {
-                  "type": "string"
-                },
-                "amount": {
-                  "type": "integer",
-                  "default": 1
-                },
-                "films": {
-                  "type": "array",
-                  "items": {
-                    "required": [
-                      "id",
-                      "name",
-                      "hash",
-                      "mime",
-                      "size",
-                      "url",
-                      "provider"
-                    ],
-                    "properties": {
-                      "id": {
-                        "type": "string"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "alternativeText": {
-                        "type": "string"
-                      },
-                      "caption": {
-                        "type": "string"
-                      },
-                      "width": {
-                        "type": "integer"
-                      },
-                      "height": {
-                        "type": "integer"
-                      },
-                      "formats": {
-                        "type": "object"
-                      },
-                      "hash": {
-                        "type": "string"
-                      },
-                      "ext": {
-                        "type": "string"
-                      },
-                      "mime": {
-                        "type": "string"
-                      },
-                      "size": {
-                        "type": "number"
-                      },
-                      "url": {
-                        "type": "string"
-                      },
-                      "previewUrl": {
-                        "type": "string"
-                      },
-                      "provider": {
-                        "type": "string"
-                      },
-                      "provider_metadata": {
-                        "type": "object"
-                      },
-                      "related": {
-                        "type": "string"
-                      },
-                      "created_by": {
-                        "type": "string"
-                      },
-                      "updated_by": {
-                        "type": "string"
-                      }
-                    }
-                  }
-                },
-                "remark": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string",
-                  "enum": [
-                    "textile",
-                    "mechanical",
-                    "electric",
-                    "digital"
-                  ]
-                },
-                "code": {
-                  "type": "string",
-                  "minLength": 12
-                }
-              }
-            }
+          "published_at": {
+            "type": "datetime"
           },
           "created_by": {
             "type": "string"
@@ -1047,7 +755,7 @@
   },
   "tags": [
     {
-      "name": "Place"
+      "name": "Project"
     }
   ]
 }

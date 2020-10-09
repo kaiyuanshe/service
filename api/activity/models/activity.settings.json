@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "activities",
   "info": {
-    "name": "Activity"
+    "name": "Activity",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "name": {
@@ -35,8 +37,8 @@
       "minLength": 100
     },
     "partner_ships": {
-      "via": "activity",
-      "collection": "partner-ship"
+      "collection": "partner-ship",
+      "via": "activity"
     },
     "start_time": {
       "type": "datetime",
@@ -50,6 +52,10 @@
       "type": "string",
       "required": true,
       "minLength": 10
+    },
+    "organizers": {
+      "plugin": "users-permissions",
+      "collection": "user"
     }
   }
 }

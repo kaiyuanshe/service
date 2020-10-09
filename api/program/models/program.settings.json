@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "programs",
   "info": {
-    "name": "Program"
+    "name": "Program",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "title": {
@@ -52,8 +54,8 @@
       "via": "program"
     },
     "accounts": {
-      "collection": "account",
-      "via": "program"
+      "via": "program",
+      "collection": "account"
     },
     "documents": {
       "collection": "file",
@@ -80,6 +82,9 @@
       "type": "string",
       "unique": false,
       "minLength": 10
+    },
+    "project": {
+      "model": "project"
     }
   }
 }

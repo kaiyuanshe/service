@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "contributions",
   "info": {
-    "name": "Contribution"
+    "name": "Contribution",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "title": {
@@ -32,12 +34,16 @@
       "required": false
     },
     "task": {
-      "via": "contributions",
-      "model": "task"
+      "model": "task",
+      "via": "contributions"
     },
     "evaluations": {
       "collection": "evaluation",
       "via": "contribution"
+    },
+    "creator": {
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }

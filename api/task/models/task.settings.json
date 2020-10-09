@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "tasks",
   "info": {
-    "name": "Task"
+    "name": "Task",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "title": {
@@ -25,8 +27,8 @@
       "required": false
     },
     "contributions": {
-      "collection": "contribution",
-      "via": "task"
+      "via": "task",
+      "collection": "contribution"
     },
     "assets": {
       "collection": "file",
@@ -44,6 +46,13 @@
     },
     "category": {
       "model": "category"
+    },
+    "project": {
+      "model": "project"
+    },
+    "creator": {
+      "plugin": "users-permissions",
+      "model": "user"
     }
   }
 }

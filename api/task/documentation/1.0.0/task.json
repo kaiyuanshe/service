@@ -568,6 +568,9 @@
                     "type": "string"
                   }
                 },
+                "creator": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -687,6 +690,9 @@
               "location": {
                 "type": "string"
               },
+              "organizers": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -718,63 +724,60 @@
               }
             }
           },
-          "created_by": {
+          "project": {
             "required": [
               "id",
-              "email"
+              "name",
+              "start_date",
+              "link"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "firstname": {
+              "name": {
                 "type": "string"
               },
-              "lastname": {
+              "start_date": {
                 "type": "string"
               },
-              "username": {
+              "end_date": {
                 "type": "string"
               },
-              "email": {
+              "members": {
                 "type": "string"
               },
-              "password": {
+              "organization": {
                 "type": "string"
               },
-              "resetPasswordToken": {
+              "logo": {
                 "type": "string"
               },
-              "registrationToken": {
+              "link": {
                 "type": "string"
               },
-              "isActive": {
-                "type": "boolean"
+              "summary": {
+                "type": "string"
               },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "published_at": {
+                "type": "datetime"
               },
-              "blocked": {
-                "type": "boolean"
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
-          "updated_by": {
+          "creator": {
             "required": [
               "id",
+              "username",
               "email"
             ],
             "properties": {
               "id": {
-                "type": "string"
-              },
-              "firstname": {
-                "type": "string"
-              },
-              "lastname": {
                 "type": "string"
               },
               "username": {
@@ -783,26 +786,41 @@
               "email": {
                 "type": "string"
               },
+              "provider": {
+                "type": "string"
+              },
               "password": {
                 "type": "string"
               },
               "resetPasswordToken": {
                 "type": "string"
               },
-              "registrationToken": {
-                "type": "string"
-              },
-              "isActive": {
+              "confirmed": {
                 "type": "boolean"
-              },
-              "roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
               },
               "blocked": {
                 "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "organizations": {
+                "type": "string"
+              },
+              "avatar": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           }
@@ -835,6 +853,12 @@
             "type": "string"
           },
           "category": {
+            "type": "string"
+          },
+          "project": {
+            "type": "string"
+          },
+          "creator": {
             "type": "string"
           },
           "created_by": {
