@@ -586,6 +586,9 @@
               "summary": {
                 "type": "string"
               },
+              "telphone": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },

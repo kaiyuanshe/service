@@ -11,19 +11,21 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "@ckeditor/ckeditor5-react": "^3.0.0",
+    "ckeditor-build-with-simple-upload-provider-strapi": "^1.0.7",
     "knex": "<0.20.0",
     "sqlite3": "latest",
-    "strapi": "3.2.1",
-    "strapi-admin": "3.2.1",
-    "strapi-connector-bookshelf": "3.2.1",
-    "strapi-plugin-content-manager": "3.2.1",
-    "strapi-plugin-content-type-builder": "3.2.1",
-    "strapi-plugin-documentation": "3.2.1",
-    "strapi-plugin-email": "3.2.1",
-    "strapi-plugin-upload": "3.2.1",
-    "strapi-plugin-users-permissions": "3.2.1",
+    "strapi": "3.3.2",
+    "strapi-admin": "3.3.2",
+    "strapi-connector-bookshelf": "3.3.2",
+    "strapi-plugin-content-manager": "3.3.2",
+    "strapi-plugin-content-type-builder": "3.3.2",
+    "strapi-plugin-documentation": "3.3.2",
+    "strapi-plugin-email": "3.3.2",
+    "strapi-plugin-upload": "3.3.2",
+    "strapi-plugin-users-permissions": "3.3.2",
     "strapi-provider-upload-azure-storage": "^1.1.1",
-    "strapi-utils": "3.2.1"
+    "strapi-utils": "3.3.2"
   },
   "author": {
     "name": "A Strapi developer"

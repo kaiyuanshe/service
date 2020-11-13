@@ -50,8 +50,8 @@
       "model": "place"
     },
     "evaluations": {
-      "collection": "evaluation",
-      "via": "program"
+      "via": "program",
+      "collection": "evaluation"
     },
     "accounts": {
       "via": "program",

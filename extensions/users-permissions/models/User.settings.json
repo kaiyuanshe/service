@@ -6,7 +6,8 @@
     "description": ""
   },
   "options": {
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "username": {
@@ -42,6 +43,11 @@
       "default": false,
       "configurable": false
     },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
     "blocked": {
       "type": "boolean",
       "default": false,
@@ -63,9 +69,7 @@
     "avatar": {
       "model": "file",
       "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
+      "allowedTypes": ["images"],
       "plugin": "upload",
       "required": false
     },
@@ -73,6 +77,12 @@
       "type": "text",
       "unique": true,
       "minLength": 3
+    },
+    "telphone": {
+      "type": "string",
+      "unique": true,
+      "minLength": 11,
+      "regex": "^[\\d+-]+$"
     }
   }
 }

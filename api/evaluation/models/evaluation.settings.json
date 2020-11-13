@@ -24,14 +24,15 @@
       "minLength": 5
     },
     "contribution": {
-      "via": "evaluations",
-      "model": "contribution"
+      "model": "contribution",
+      "via": "evaluations"
     },
     "program": {
-      "via": "evaluations",
-      "model": "program"
+      "model": "program",
+      "via": "evaluations"
     },
     "creator": {
+      "unique": true,
       "plugin": "users-permissions",
       "model": "user"
     }

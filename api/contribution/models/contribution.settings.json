@@ -38,8 +38,8 @@
       "via": "contributions"
     },
     "evaluations": {
-      "collection": "evaluation",
-      "via": "contribution"
+      "via": "contribution",
+      "collection": "evaluation"
     },
     "creator": {
       "plugin": "users-permissions",

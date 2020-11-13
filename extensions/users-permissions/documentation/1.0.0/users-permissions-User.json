@@ -1364,6 +1364,10 @@
           "summary": {
             "type": "string",
             "minLength": 3
+          },
+          "telphone": {
+            "type": "string",
+            "minLength": 11
           }
         }
       },
@@ -1411,6 +1415,10 @@
           "summary": {
             "type": "string",
             "minLength": 3
+          },
+          "telphone": {
+            "type": "string",
+            "minLength": 11
           },
           "created_by": {
             "type": "string"
