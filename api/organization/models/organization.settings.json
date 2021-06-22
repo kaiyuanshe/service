@@ -57,17 +57,18 @@
       "unique": true,
       "minLength": 10
     },
-    "lifeCycle": {
-      "type": "component",
-      "repeatable": false,
-      "component": "date.period",
-      "required": true
-    },
     "location": {
       "type": "component",
       "repeatable": false,
       "component": "location.address",
       "required": true
+    },
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "end_date": {
+      "type": "date"
     }
   }
 }
