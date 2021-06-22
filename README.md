@@ -31,9 +31,22 @@
 
 ### 组件
 
-|  名称  |   分类   |     用途     |
-| :----: | :------: | :----------: |
-| Period |   Date   |     周期     |
-| Goods  | Supplies | 设备、纪念品 |
+|  名称   |   分类   |     用途     |
+| :-----: | :------: | :----------: |
+| Period  |   Date   |     周期     |
+|  Goods  | Supplies | 设备、纪念品 |
+| Address | Location |     地址     |
+
+## 部署
+
+### GitHub Actions 环境变量
+
+|   变量名   |              值示例              |
+| :--------: | :------------------------------: |
+|   `PATH`   |             `~/www`              |
+|   `HOST`   |        `your.server.net`         |
+|   `USER`   |              `root`              |
+| `SSH_KEY`  | （`cat ~/.ssh/id_rsa` 命令输出） |
+| `BASE_URL` |    `https://your.server.net`     |
 
 [1]: https://kaiyuanshe.cn/
