@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@master
       - name: Clean
         run: |
-          rm -rf ./.git/
+          rm -rf .git/ .gitignore .github/ .editorconfig .eslint*
       - name: Transport
         uses: garygrossgarten/github-action-scp@release
         with:
@@ -30,5 +30,3 @@ jobs:
             cd ${{ secrets.PATH }}
             echo BASE_URL=${{ secrets.BASE_URL }} > .env
             echo STORAGE_ACCOUNT_KEY=${{ secrets.STORAGE_ACCOUNT_KEY }} >> .env
-            sudo ~/.local/bin/docker-compose down
-            sudo ~/.local/bin/docker-compose up -d
