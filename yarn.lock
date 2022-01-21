@@ -1035,7 +1035,7 @@
     "@babel/plugin-transform-react-jsx-development" "^7.14.5"
     "@babel/plugin-transform-react-pure-annotations" "^7.14.5"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.5", "@babel/runtime@^7.2.0", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.5", "@babel/runtime@^7.2.0", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
   version "7.11.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
   integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
@@ -1114,15 +1114,15 @@
     "@babel/helper-validator-identifier" "^7.14.5"
     to-fast-properties "^2.0.0"
 
-"@buffetjs/core@3.3.6":
-  version "3.3.6"
-  resolved "https://registry.nlark.com/@buffetjs/core/download/@buffetjs/core-3.3.6.tgz#f8ff2ced0e8cbbe089810308f2488bd68a8ebeda"
-  integrity sha1-+P8s7Q6Mu+CJgQMI8kiL1oqOvto=
+"@buffetjs/core@3.3.8":
+  version "3.3.8"
+  resolved "https://registry.nlark.com/@buffetjs/core/download/@buffetjs/core-3.3.8.tgz#59899e85ccc238b57ec0d4fcbe9b160c480e5c00"
+  integrity sha1-WYmehczCOLV+wNT8vpsWDEgOXAA=
   dependencies:
-    "@buffetjs/hooks" "3.3.6"
-    "@buffetjs/icons" "3.3.6"
-    "@buffetjs/styles" "3.3.6"
-    "@buffetjs/utils" "3.3.6"
+    "@buffetjs/hooks" "3.3.8"
+    "@buffetjs/icons" "3.3.8"
+    "@buffetjs/styles" "3.3.8"
+    "@buffetjs/utils" "3.3.8"
     "@fortawesome/fontawesome-svg-core" "^1.2.25"
     "@fortawesome/free-regular-svg-icons" "^5.11.2"
     "@fortawesome/free-solid-svg-icons" "^5.11.2"
@@ -1138,35 +1138,35 @@
     react-with-direction "^1.3.1"
     reactstrap "^8.5.1"
 
-"@buffetjs/custom@3.3.6":
-  version "3.3.6"
-  resolved "https://registry.nlark.com/@buffetjs/custom/download/@buffetjs/custom-3.3.6.tgz#81b905d7507fa69e7bf9a74d863cc5cb4a06f9d3"
-  integrity sha1-gbkF11B/pp57+adNhjzFy0oG+dM=
+"@buffetjs/custom@3.3.8":
+  version "3.3.8"
+  resolved "https://registry.nlark.com/@buffetjs/custom/download/@buffetjs/custom-3.3.8.tgz#d7e73d9043ec34380410cc1163236df7443a70e9"
+  integrity sha1-1+c9kEPsNDgEEMwRYyNt90Q6cOk=
   dependencies:
-    "@buffetjs/core" "3.3.6"
-    "@buffetjs/styles" "3.3.6"
-    "@buffetjs/utils" "3.3.6"
+    "@buffetjs/core" "3.3.8"
+    "@buffetjs/styles" "3.3.8"
+    "@buffetjs/utils" "3.3.8"
     lodash "4.17.21"
     moment "^2.24.0"
     prop-types "^15.5.10"
     react-moment-proptypes "^1.7.0"
 
-"@buffetjs/hooks@3.3.6":
-  version "3.3.6"
-  resolved "https://registry.nlark.com/@buffetjs/hooks/download/@buffetjs/hooks-3.3.6.tgz#9c11b7c036834b89de705bba6e24b8915931cc13"
-  integrity sha1-nBG3wDaDS4necFu6biS4kVkxzBM=
+"@buffetjs/hooks@3.3.8":
+  version "3.3.8"
+  resolved "https://registry.nlark.com/@buffetjs/hooks/download/@buffetjs/hooks-3.3.8.tgz#0b03b1aa9cf2236861d5e8533567baa8123fa7ed"
+  integrity sha1-CwOxqpzyI2hh1ehTNWe6qBI/p+0=
 
-"@buffetjs/icons@3.3.6":
-  version "3.3.6"
-  resolved "https://registry.nlark.com/@buffetjs/icons/download/@buffetjs/icons-3.3.6.tgz#b7b59ec69cb2f629a7b102ebfc2115910aa707dd"
-  integrity sha1-t7Wexpyy9imnsQLr/CEVkQqnB90=
+"@buffetjs/icons@3.3.8":
+  version "3.3.8"
+  resolved "https://registry.nlark.com/@buffetjs/icons/download/@buffetjs/icons-3.3.8.tgz#289fa686049e467eebb1036dc9624fc70f2d9b8b"
+  integrity sha1-KJ+mhgSeRn7rsQNtyWJPxw8tm4s=
   dependencies:
     prop-types "^15.5.10"
 
-"@buffetjs/styles@3.3.6":
-  version "3.3.6"
-  resolved "https://registry.nlark.com/@buffetjs/styles/download/@buffetjs/styles-3.3.6.tgz#091d393c3ace250b2eba92933ad924aaa56be4a8"
-  integrity sha1-CR05PDrOJQsuupKTOtkkqqVr5Kg=
+"@buffetjs/styles@3.3.8":
+  version "3.3.8"
+  resolved "https://registry.nlark.com/@buffetjs/styles/download/@buffetjs/styles-3.3.8.tgz#932dca9e1c49e3c6717260f1ad784ec8595aec35"
+  integrity sha1-ky3KnhxJ48ZxcmDxrXhOyFla7DU=
   dependencies:
     "@fortawesome/fontawesome-free" "^5.12.0"
     "@fortawesome/fontawesome-svg-core" "^1.2.22"
@@ -1177,13 +1177,13 @@
     react-dates "^21.1.0"
     react-tooltip "^4.2.11"
 
-"@buffetjs/utils@3.3.6":
-  version "3.3.6"
-  resolved "https://registry.nlark.com/@buffetjs/utils/download/@buffetjs/utils-3.3.6.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40buffetjs%2Futils%2Fdownload%2F%40buffetjs%2Futils-3.3.6.tgz#d8c79a866219e0005c0f3b28905f7a5be8aa740e"
-  integrity sha1-2MeahmIZ4ABcDzsokF96W+iqdA4=
+"@buffetjs/utils@3.3.8":
+  version "3.3.8"
+  resolved "https://registry.nlark.com/@buffetjs/utils/download/@buffetjs/utils-3.3.8.tgz#d21ef4c09bb2173e2a7465d39805237ade06b235"
+  integrity sha1-0h70wJuyFz4qdGXTmAUjet4GsjU=
   dependencies:
     lodash "4.17.21"
-    yup "^0.27.0"
+    yup "^0.32.9"
 
 "@casl/ability@^4.1.5":
   version "4.1.6"
@@ -1192,10 +1192,10 @@
   dependencies:
     sift "^13.0.0"
 
-"@ckeditor/ckeditor5-react@^3.0.2":
-  version "3.0.2"
-  resolved "https://registry.nlark.com/@ckeditor/ckeditor5-react/download/@ckeditor/ckeditor5-react-3.0.2.tgz#257466959cf5c6e16ed3dd3afe860e4c177dd156"
-  integrity sha1-JXRmlZz1xuFu0906/oYOTBd90VY=
+"@ckeditor/ckeditor5-react@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.npmmirror.com/@ckeditor/ckeditor5-react/download/@ckeditor/ckeditor5-react-3.0.3.tgz#7b2d2634bd70a1efcb837dde5a9ac3ed2d839fbc"
+  integrity sha1-ey0mNL1woe/Lg33eWprD7S2Dn7w=
   dependencies:
     prop-types "^15.7.2"
 
@@ -2936,10 +2936,10 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-ckeditor5-build-strapi-wysiwyg@^1.11.0:
-  version "1.11.0"
-  resolved "https://registry.nlark.com/ckeditor5-build-strapi-wysiwyg/download/ckeditor5-build-strapi-wysiwyg-1.11.0.tgz#953c47399dff4b7e8e9c32ff5d1123fb68aaaa4c"
-  integrity sha1-lTxHOZ3/S36OnDL/XREj+2iqqkw=
+ckeditor5-build-strapi-wysiwyg@^1.14.0:
+  version "1.14.0"
+  resolved "https://registry.npmmirror.com/ckeditor5-build-strapi-wysiwyg/download/ckeditor5-build-strapi-wysiwyg-1.14.0.tgz#02eca459e212aed13b35f1be56f93d5927c3b6f0"
+  integrity sha512-1NipbQm3ngtpIej+9iIxpGrqv86yJ8ZCcw1hLs4S5Y+dbuD2Hux1ztKW4QSfbsiaFgiFCbZlneNIApQPCMGVkA==
 
 class-utils@^0.3.5:
   version "0.3.6"
@@ -4610,11 +4610,6 @@ flush-write-stream@^1.0.0:
   dependencies:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
-
-fn-name@~2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/fn-name/-/fn-name-2.0.1.tgz#5214d7537a4d06a4a301c0cc262feb84188002e7"
-  integrity sha1-UhTXU3pNBqSjAcDMJi/rhBiAAuc=
 
 follow-redirects@^1.0.0, follow-redirects@^1.10.0:
   version "1.13.0"
@@ -8079,11 +8074,6 @@ prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.6.0,
     object-assign "^4.1.1"
     react-is "^16.8.1"
 
-property-expr@^1.5.0:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/property-expr/-/property-expr-1.5.1.tgz#22e8706894a0c8e28d58735804f6ba3a3673314f"
-  integrity sha512-CGuc0VUTGthpJXL36ydB6jnbyOf/rAHFvmVrJlH+Rg0DqqLFQGAP6hIaxD/G0OAmBJPhXDHuEJigrp0e0wFV6g==
-
 property-expr@^2.0.4:
   version "2.0.4"
   resolved "https://registry.nlark.com/property-expr/download/property-expr-2.0.4.tgz#37b925478e58965031bb612ec5b3260f8241e910"
@@ -9702,10 +9692,10 @@ std-env@^2.2.1:
   dependencies:
     ci-info "^1.6.0"
 
-strapi-admin@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-admin/download/strapi-admin-3.6.5.tgz#6f0f3ac801e9501cb5c2395592edb51df3d55c7c"
-  integrity sha1-bw86yAHpUBy1wjlVku21HfPVXHw=
+strapi-admin@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.npmmirror.com/strapi-admin/download/strapi-admin-3.6.8.tgz#0000f07c8004c7110b49abb1757f50ab9d751a92"
+  integrity sha512-LqOzAE27eJZAfCgW1KQipESfL2PMumej5CS8dBdu+PHMsn270gKdZceA4vLBYix5OkkNnsKcioTzK1/uyWYpdg==
   dependencies:
     "@babel/core" "^7.14.0"
     "@babel/plugin-proposal-async-generator-functions" "^7.13.15"
@@ -9717,12 +9707,12 @@ strapi-admin@3.6.5:
     "@babel/preset-env" "^7.13.15"
     "@babel/preset-react" "^7.13.13"
     "@babel/runtime" "^7.13.17"
-    "@buffetjs/core" "3.3.6"
-    "@buffetjs/custom" "3.3.6"
-    "@buffetjs/hooks" "3.3.6"
-    "@buffetjs/icons" "3.3.6"
-    "@buffetjs/styles" "3.3.6"
-    "@buffetjs/utils" "3.3.6"
+    "@buffetjs/core" "3.3.8"
+    "@buffetjs/custom" "3.3.8"
+    "@buffetjs/hooks" "3.3.8"
+    "@buffetjs/icons" "3.3.8"
+    "@buffetjs/styles" "3.3.8"
+    "@buffetjs/utils" "3.3.8"
     "@casl/ability" "^4.1.5"
     "@fingerprintjs/fingerprintjs" "3.1.1"
     "@fortawesome/fontawesome-free" "^5.15.3"
@@ -9794,8 +9784,8 @@ strapi-admin@3.6.5:
     sanitize.css "^4.1.0"
     semver "7.3.5"
     sift "13.5.0"
-    strapi-helper-plugin "3.6.5"
-    strapi-utils "3.6.5"
+    strapi-helper-plugin "3.6.8"
+    strapi-utils "3.6.8"
     style-loader "^0.23.1"
     styled-components "^5.2.3"
     terser-webpack-plugin "^1.2.3"
@@ -9807,10 +9797,10 @@ strapi-admin@3.6.5:
     webpackbar "^4.0.0"
     yup "^0.32.9"
 
-strapi-connector-bookshelf@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-connector-bookshelf/download/strapi-connector-bookshelf-3.6.5.tgz#e9aaaa98386b585577c9d46a756ae91a75cf3be9"
-  integrity sha1-6aqqmDhrWFV3ydRqdWrpGnXPO+k=
+strapi-connector-bookshelf@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.npmmirror.com/strapi-connector-bookshelf/download/strapi-connector-bookshelf-3.6.8.tgz#95767ffa9631d08b24fb705fc076df4e0e6b01f0"
+  integrity sha512-2A9RFLO3jF4TdX7tjRz+uu80sGhVyhpDI+qxs6rQ/I2fbMgg/7zO9VpR0csHYI9vpKzkOcEhV2uvcgY8l3Gl9A==
   dependencies:
     bookshelf "^1.0.1"
     date-fns "^2.19.0"
@@ -9819,49 +9809,49 @@ strapi-connector-bookshelf@3.6.5:
     p-map "4.0.0"
     pluralize "^8.0.0"
     rimraf "3.0.2"
-    strapi-utils "3.6.5"
+    strapi-utils "3.6.8"
 
-strapi-database@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-database/download/strapi-database-3.6.5.tgz#d749a55d0303de77a7393d5b498e82cd7c553cfd"
-  integrity sha1-10mlXQMD3nenOT1bSY6CzXxVPP0=
+strapi-database@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.nlark.com/strapi-database/download/strapi-database-3.6.8.tgz#94a99a06e762d4f2ad5d2db173c75ab0db3ac1e2"
+  integrity sha1-lKmaBudi1PKtXS2xc8dasNs6weI=
   dependencies:
     debug "4.3.1"
     lodash "4.17.21"
     p-map "4.0.0"
-    strapi-utils "3.6.5"
+    strapi-utils "3.6.8"
     verror "^1.10.0"
 
-strapi-generate-api@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-generate-api/download/strapi-generate-api-3.6.5.tgz#5263f2fff2e8b327e3efd1f7b5de398ebb7ebf35"
-  integrity sha1-UmPy//Losyfj79H3td45jrt+vzU=
+strapi-generate-api@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.nlark.com/strapi-generate-api/download/strapi-generate-api-3.6.8.tgz#e198e868e873e9134b1c1c1b71a2111e4c3edbba"
+  integrity sha1-4ZjoaOhz6RNLHBwbcaIRHkw+27o=
   dependencies:
     lodash "4.17.21"
     pluralize "^8.0.0"
-    strapi-utils "3.6.5"
+    strapi-utils "3.6.8"
 
-strapi-generate-controller@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-generate-controller/download/strapi-generate-controller-3.6.5.tgz#4f6bd09d051a2aefe16ecac90bcd77955ce7743a"
-  integrity sha1-T2vQnQUaKu/hbsrJC813lVzndDo=
+strapi-generate-controller@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.npmmirror.com/strapi-generate-controller/download/strapi-generate-controller-3.6.8.tgz#294019f6e46490047d02a501bcc63d64c55c023d"
+  integrity sha1-KUAZ9uRkkAR9AqUBvMY9ZMVcAj0=
   dependencies:
     lodash "4.17.21"
-    strapi-utils "3.6.5"
+    strapi-utils "3.6.8"
 
-strapi-generate-model@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-generate-model/download/strapi-generate-model-3.6.5.tgz#74faed7854dff98348b7cd50ac9d7eb9aa179aad"
-  integrity sha1-dPrteFTf+YNIt81QrJ1+uaoXmq0=
+strapi-generate-model@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.nlark.com/strapi-generate-model/download/strapi-generate-model-3.6.8.tgz#ddfde9500b9f25aecd07f62c259e8c5bb1435e7b"
+  integrity sha1-3f3pUAufJa7NB/YsJZ6MW7FDXns=
   dependencies:
     lodash "4.17.21"
     pluralize "^8.0.0"
-    strapi-utils "3.6.5"
+    strapi-utils "3.6.8"
 
-strapi-generate-new@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-generate-new/download/strapi-generate-new-3.6.5.tgz#1909a988529b7a6268346ea60a0d80cd618ad224"
-  integrity sha1-GQmpiFKbemJoNG6mCg2AzWGK0iQ=
+strapi-generate-new@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.nlark.com/strapi-generate-new/download/strapi-generate-new-3.6.8.tgz#44069ae6fa494ece3d86319084d547d38360de05"
+  integrity sha1-RAaa5vpJTs49hjGQhNVH04Ng3gU=
   dependencies:
     "@sentry/node" "6.3.0"
     chalk "^4.1.1"
@@ -9873,56 +9863,56 @@ strapi-generate-new@3.6.5:
     node-fetch "^2.6.1"
     node-machine-id "^1.1.10"
     ora "^5.4.0"
-    tar "6.1.0"
+    tar "6.1.4"
     uuid "^3.3.2"
 
-strapi-generate-plugin@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-generate-plugin/download/strapi-generate-plugin-3.6.5.tgz#97813713f15164ca74b44fc94508eadea95a1c55"
-  integrity sha1-l4E3E/FRZMp0tE/JRQjq3qlaHFU=
+strapi-generate-plugin@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.nlark.com/strapi-generate-plugin/download/strapi-generate-plugin-3.6.8.tgz#c82e7e4ffb6e11ab0ded7109c33b858bd9130470"
+  integrity sha1-yC5+T/tuEasN7XEJwzuFi9kTBHA=
   dependencies:
     fs-extra "^9.1.0"
     lodash "4.17.21"
-    strapi-utils "3.6.5"
+    strapi-utils "3.6.8"
 
-strapi-generate-policy@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-generate-policy/download/strapi-generate-policy-3.6.5.tgz#fb40453069e4aaffa6ee385e72fb78d02b2ef195"
-  integrity sha1-+0BFMGnkqv+m7jhecvt40Csu8ZU=
+strapi-generate-policy@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.nlark.com/strapi-generate-policy/download/strapi-generate-policy-3.6.8.tgz#87641e5ce2aca459ac4e62ce23115306bb04dfa9"
+  integrity sha1-h2QeXOKspFmsTmLOIxFTBrsE36k=
   dependencies:
     lodash "4.17.21"
-    strapi-utils "3.6.5"
+    strapi-utils "3.6.8"
 
-strapi-generate-service@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-generate-service/download/strapi-generate-service-3.6.5.tgz#c605cb318412d483d35564b6b58dea31357ea2e8"
-  integrity sha1-xgXLMYQS1IPTVWS2tY3qMTV+oug=
+strapi-generate-service@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.nlark.com/strapi-generate-service/download/strapi-generate-service-3.6.8.tgz#bdb1ce416d8e92ad48393f3f1c13f898766f37bb"
+  integrity sha1-vbHOQW2Okq1IOT8/HBP4mHZvN7s=
   dependencies:
     lodash "4.17.21"
-    strapi-utils "3.6.5"
+    strapi-utils "3.6.8"
 
-strapi-generate@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-generate/download/strapi-generate-3.6.5.tgz#fa315c67fa66dd95f8860a4f13c511321c8eee71"
-  integrity sha1-+jFcZ/pm3ZX4hgpPE8URMhyO7nE=
+strapi-generate@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.nlark.com/strapi-generate/download/strapi-generate-3.6.8.tgz#54a7b8bf84f807dd654d32554201c28bc62d445f"
+  integrity sha1-VKe4v4T4B91lTTJVQgHCi8YtRF8=
   dependencies:
     async "^2.6.2"
     fs-extra "^9.1.0"
     lodash "4.17.21"
     reportback "^2.0.2"
-    strapi-utils "3.6.5"
+    strapi-utils "3.6.8"
 
-strapi-helper-plugin@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-helper-plugin/download/strapi-helper-plugin-3.6.5.tgz#061cb7bb5fc484b381eea779fc40fe0069e7d2ec"
-  integrity sha1-Bhy3u1/EhLOB7qd5/ED+AGnn0uw=
+strapi-helper-plugin@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.nlark.com/strapi-helper-plugin/download/strapi-helper-plugin-3.6.8.tgz#29a6ff49ef1fe5021d9a24e566a375d357f450ae"
+  integrity sha1-Kab/Se8f5QIdmiTlZqN101f0UK4=
   dependencies:
-    "@buffetjs/core" "3.3.6"
-    "@buffetjs/custom" "3.3.6"
-    "@buffetjs/hooks" "3.3.6"
-    "@buffetjs/icons" "3.3.6"
-    "@buffetjs/styles" "3.3.6"
-    "@buffetjs/utils" "3.3.6"
+    "@buffetjs/core" "3.3.8"
+    "@buffetjs/custom" "3.3.8"
+    "@buffetjs/hooks" "3.3.8"
+    "@buffetjs/icons" "3.3.8"
+    "@buffetjs/styles" "3.3.8"
+    "@buffetjs/utils" "3.3.8"
     "@fortawesome/fontawesome-free" "^5.15.2"
     "@fortawesome/fontawesome-svg-core" "^1.2.35"
     "@fortawesome/free-brands-svg-icons" "^5.15.2"
@@ -9944,25 +9934,25 @@ strapi-helper-plugin@3.6.5:
     styled-components "^5.2.3"
     whatwg-fetch "^3.6.2"
 
-strapi-plugin-ckeditor5@^1.11.0:
-  version "1.11.0"
-  resolved "https://registry.nlark.com/strapi-plugin-ckeditor5/download/strapi-plugin-ckeditor5-1.11.0.tgz#d32a46232887f601e988289c0797327bee3d6751"
-  integrity sha1-0ypGIyiH9gHpiCicB5cye+49Z1E=
+strapi-plugin-ckeditor5@^1.14.0:
+  version "1.14.0"
+  resolved "https://registry.npmmirror.com/strapi-plugin-ckeditor5/download/strapi-plugin-ckeditor5-1.14.0.tgz#008b0cb091e5f2f7e36287b5099ba0abd33123ca"
+  integrity sha512-5HedxIOfapFSKzVLCnU8Z3rqsyJf1Zuiz1JO8HefacjR/5xgQclUWzrwWULdaYkxRxyo8k8z76fs4OoDNdmNEQ==
   dependencies:
-    "@ckeditor/ckeditor5-react" "^3.0.2"
-    ckeditor5-build-strapi-wysiwyg "^1.11.0"
+    "@ckeditor/ckeditor5-react" "^3.0.3"
+    ckeditor5-build-strapi-wysiwyg "^1.14.0"
 
-strapi-plugin-content-manager@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-plugin-content-manager/download/strapi-plugin-content-manager-3.6.5.tgz#ad4c3e6a27dbf89ce4c28a3ec3d4e78dff699570"
-  integrity sha1-rUw+aifb+Jzkwoo+w9Tnjf9plXA=
+strapi-plugin-content-manager@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.npmmirror.com/strapi-plugin-content-manager/download/strapi-plugin-content-manager-3.6.8.tgz#fe46aeea0b55bbdc9d06c6c9fcdf27cdfee29a31"
+  integrity sha512-cNI+/Shx4ayd3FUfoy3E/BG2yutczos5LX8XCgHdBGVI1YkIdNbnGJXd+fL4jQQZzDRwI9fABs6VXeQCyuCY8A==
   dependencies:
-    "@buffetjs/core" "3.3.6"
-    "@buffetjs/custom" "3.3.6"
-    "@buffetjs/hooks" "3.3.6"
-    "@buffetjs/icons" "3.3.6"
-    "@buffetjs/styles" "3.3.6"
-    "@buffetjs/utils" "3.3.6"
+    "@buffetjs/core" "3.3.8"
+    "@buffetjs/custom" "3.3.8"
+    "@buffetjs/hooks" "3.3.8"
+    "@buffetjs/icons" "3.3.8"
+    "@buffetjs/styles" "3.3.8"
+    "@buffetjs/utils" "3.3.8"
     "@sindresorhus/slugify" "1.1.0"
     classnames "^2.3.1"
     codemirror "^5.61.0"
@@ -9993,21 +9983,21 @@ strapi-plugin-content-manager@3.6.5:
     redux-immutable "^4.0.0"
     reselect "^4.0.0"
     sanitize-html "2.3.3"
-    strapi-helper-plugin "3.6.5"
-    strapi-utils "3.6.5"
+    strapi-helper-plugin "3.6.8"
+    strapi-utils "3.6.8"
     yup "^0.32.9"
 
-strapi-plugin-content-type-builder@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-plugin-content-type-builder/download/strapi-plugin-content-type-builder-3.6.5.tgz#bca678dc737fa8f54b0e131be654175b833630ad"
-  integrity sha1-vKZ43HN/qPVLDhMb5lQXW4M2MK0=
+strapi-plugin-content-type-builder@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.npmmirror.com/strapi-plugin-content-type-builder/download/strapi-plugin-content-type-builder-3.6.8.tgz#dcfbbec823d997e1f103c64f2b05e53914d46090"
+  integrity sha512-kxCPNHV15JmNz3PUdb/8I5mj4i0n8HicumSvqZh3LxovUaIqd0tGioMd4pJ3BY8XcPI7SpdZrEsbPHTqlQIEvg==
   dependencies:
-    "@buffetjs/core" "3.3.6"
-    "@buffetjs/custom" "3.3.6"
-    "@buffetjs/hooks" "3.3.6"
-    "@buffetjs/icons" "3.3.6"
-    "@buffetjs/styles" "3.3.6"
-    "@buffetjs/utils" "3.3.6"
+    "@buffetjs/core" "3.3.8"
+    "@buffetjs/custom" "3.3.8"
+    "@buffetjs/hooks" "3.3.8"
+    "@buffetjs/icons" "3.3.8"
+    "@buffetjs/styles" "3.3.8"
+    "@buffetjs/utils" "3.3.8"
     "@sindresorhus/slugify" "1.1.0"
     fs-extra "^9.1.0"
     immutable "^3.8.2"
@@ -10023,23 +10013,23 @@ strapi-plugin-content-type-builder@3.6.5:
     redux "^4.0.1"
     redux-immutable "^4.0.0"
     reselect "^4.0.0"
-    strapi-generate "3.6.5"
-    strapi-generate-api "3.6.5"
-    strapi-helper-plugin "3.6.5"
-    strapi-utils "3.6.5"
+    strapi-generate "3.6.8"
+    strapi-generate-api "3.6.8"
+    strapi-helper-plugin "3.6.8"
+    strapi-utils "3.6.8"
     yup "^0.32.9"
 
-strapi-plugin-documentation@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-plugin-documentation/download/strapi-plugin-documentation-3.6.5.tgz#15dc7285440952fff8f4b2cae187b0f67c05b29c"
-  integrity sha1-FdxyhUQJUv/49LLK4Yew9nwFspw=
+strapi-plugin-documentation@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.npmmirror.com/strapi-plugin-documentation/download/strapi-plugin-documentation-3.6.8.tgz#06007094d8075cfcb1fbdc0ed7660b3535baddeb"
+  integrity sha1-BgBwlNgHXPyx+9wO12YLNTW63es=
   dependencies:
-    "@buffetjs/core" "3.3.6"
-    "@buffetjs/custom" "3.3.6"
-    "@buffetjs/hooks" "3.3.6"
-    "@buffetjs/icons" "3.3.6"
-    "@buffetjs/styles" "3.3.6"
-    "@buffetjs/utils" "3.3.6"
+    "@buffetjs/core" "3.3.8"
+    "@buffetjs/custom" "3.3.8"
+    "@buffetjs/hooks" "3.3.8"
+    "@buffetjs/icons" "3.3.8"
+    "@buffetjs/styles" "3.3.8"
+    "@buffetjs/utils" "3.3.8"
     cheerio "^1.0.0-rc.5"
     fs-extra "^9.1.0"
     immutable "^3.8.2"
@@ -10058,29 +10048,29 @@ strapi-plugin-documentation@3.6.5:
     redux "^4.0.1"
     redux-immutable "^4.0.0"
     reselect "^4.0.0"
-    strapi-helper-plugin "3.6.5"
+    strapi-helper-plugin "3.6.8"
     swagger-ui-dist "3.47.1"
 
-strapi-plugin-email@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-plugin-email/download/strapi-plugin-email-3.6.5.tgz#7bcc2026300bf047e26591ef9cc91fb34fbdd514"
-  integrity sha1-e8wgJjAL8EfiZZHvnMkfs0+91RQ=
+strapi-plugin-email@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.npmmirror.com/strapi-plugin-email/download/strapi-plugin-email-3.6.8.tgz#81a26ff62e4ccfcb802e92bbf3e3a485d0a57e9f"
+  integrity sha512-gfb1Z1YmZMvfSAZzeHCFAE5f5nHbPxX6lBxTW4O9Im7Z0/C9Z7wQkZmWioZVHNynWbEMQC79WzfFoIAZ+pyg/w==
   dependencies:
     lodash "4.17.21"
-    strapi-provider-email-sendmail "3.6.5"
-    strapi-utils "3.6.5"
+    strapi-provider-email-sendmail "3.6.8"
+    strapi-utils "3.6.8"
 
-strapi-plugin-upload@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-plugin-upload/download/strapi-plugin-upload-3.6.5.tgz#9327b796bf0ee4c094d4f095a2f05c5c5bc22a63"
-  integrity sha1-kye3lr8O5MCU1PCVovBcXFvCKmM=
+strapi-plugin-upload@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.npmmirror.com/strapi-plugin-upload/download/strapi-plugin-upload-3.6.8.tgz#5bc02fb299ccc62a909b273b2f51aedf607c7032"
+  integrity sha512-uVNwtJP7yMqSn02VG7zuECRqdRWQyaZ9G9Wac/+p3GyPXAnzTiitBNMWgWnkZFO/LAulrSvIF2w3IMBIrJfIpw==
   dependencies:
-    "@buffetjs/core" "3.3.6"
-    "@buffetjs/custom" "3.3.6"
-    "@buffetjs/hooks" "3.3.6"
-    "@buffetjs/icons" "3.3.6"
-    "@buffetjs/styles" "3.3.6"
-    "@buffetjs/utils" "3.3.6"
+    "@buffetjs/core" "3.3.8"
+    "@buffetjs/custom" "3.3.8"
+    "@buffetjs/hooks" "3.3.8"
+    "@buffetjs/icons" "3.3.8"
+    "@buffetjs/styles" "3.3.8"
+    "@buffetjs/utils" "3.3.8"
     byte-size "^7.0.1"
     cropperjs "^1.5.11"
     immer "^8.0.1"
@@ -10099,23 +10089,23 @@ strapi-plugin-upload@3.6.5:
     react-router-dom "^5.0.0"
     reactstrap "8.4.1"
     sharp "0.28.1"
-    strapi-helper-plugin "3.6.5"
-    strapi-provider-upload-local "3.6.5"
-    strapi-utils "3.6.5"
+    strapi-helper-plugin "3.6.8"
+    strapi-provider-upload-local "3.6.8"
+    strapi-utils "3.6.8"
     stream-to-array "^2.3.0"
     uuid "^3.2.1"
 
-strapi-plugin-users-permissions@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-plugin-users-permissions/download/strapi-plugin-users-permissions-3.6.5.tgz#fe536cfcb20a16bb8c3e45f0db4655cf4b2199c8"
-  integrity sha1-/lNs/LIKFruMPkXw20ZVz0shmcg=
+strapi-plugin-users-permissions@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.npmmirror.com/strapi-plugin-users-permissions/download/strapi-plugin-users-permissions-3.6.8.tgz#7a46c73bb19881607afae3c527eca8835d532210"
+  integrity sha512-DZPPYMUzcDxadc3BHntEobVwrWwYsI1hHK+ENTU0EVD1w9Zi4h41Bae5DKIuqwRCK2G24Dsmr5G/edcVCFeRCg==
   dependencies:
-    "@buffetjs/core" "3.3.6"
-    "@buffetjs/custom" "3.3.6"
-    "@buffetjs/hooks" "3.3.6"
-    "@buffetjs/icons" "3.3.6"
-    "@buffetjs/styles" "3.3.6"
-    "@buffetjs/utils" "3.3.6"
+    "@buffetjs/core" "3.3.8"
+    "@buffetjs/custom" "3.3.8"
+    "@buffetjs/hooks" "3.3.8"
+    "@buffetjs/icons" "3.3.8"
+    "@buffetjs/styles" "3.3.8"
+    "@buffetjs/utils" "3.3.8"
     "@purest/providers" "^1.0.2"
     bcryptjs "^2.4.3"
     grant-koa "5.4.8"
@@ -10133,34 +10123,34 @@ strapi-plugin-users-permissions@3.6.5:
     reactstrap "8.4.1"
     redux-saga "^0.16.0"
     request "^2.83.0"
-    strapi-helper-plugin "3.6.5"
-    strapi-utils "3.6.5"
+    strapi-helper-plugin "3.6.8"
+    strapi-utils "3.6.8"
     uuid "^3.1.0"
 
-strapi-provider-email-sendmail@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-provider-email-sendmail/download/strapi-provider-email-sendmail-3.6.5.tgz#c5b092f399f279e15b5a37029122bb46843a5108"
-  integrity sha1-xbCS85nyeeFbWjcCkSK7RoQ6UQg=
+strapi-provider-email-sendmail@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.nlark.com/strapi-provider-email-sendmail/download/strapi-provider-email-sendmail-3.6.8.tgz#6b9f6db31dee6656e4f09fa20479bcb9b6abf87d"
+  integrity sha1-a59tsx3uZlbk8J+iBHm8ubar+H0=
   dependencies:
     sendmail "^1.6.1"
-    strapi-utils "3.6.5"
+    strapi-utils "3.6.8"
 
-strapi-provider-upload-azure-storage@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.nlark.com/strapi-provider-upload-azure-storage/download/strapi-provider-upload-azure-storage-1.1.3.tgz#3f269ce1b8a2e6483943024d6055c0c3f5889aad"
-  integrity sha1-Pyac4bii5kg5QwJNYFXAw/WImq0=
+strapi-provider-upload-azure-storage@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmmirror.com/strapi-provider-upload-azure-storage/download/strapi-provider-upload-azure-storage-2.0.0.tgz#487c750b8cdc3a0b5d3e450ec1277a0e4ff8b7d9"
+  integrity sha512-Kjuq25HLuTeKKI8yWCPix5RZceQwBx3u5A+NHNCRxP9pC3NnRn1Yd1nAlSKkdB56fkWn5y72rErlaUIfk4tfig==
   dependencies:
     "@azure/storage-blob" "^10.5.0"
 
-strapi-provider-upload-local@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-provider-upload-local/download/strapi-provider-upload-local-3.6.5.tgz#0be16515c9c5eeca05211bd9f4b2a93449ccfbe3"
-  integrity sha1-C+FlFcnF7soFIRvZ9LKpNEnM++M=
+strapi-provider-upload-local@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.nlark.com/strapi-provider-upload-local/download/strapi-provider-upload-local-3.6.8.tgz#4666269e96f2ae878f366ae091d09ea69fb0237b"
+  integrity sha1-RmYmnpbyroePNmrgkdCepp+wI3s=
 
-strapi-utils@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi-utils/download/strapi-utils-3.6.5.tgz#782c510ea8bcc9278ddd99a000a24e6db7723f40"
-  integrity sha1-eCxRDqi8ySeN3ZmgAKJObbdyP0A=
+strapi-utils@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.npmmirror.com/strapi-utils/download/strapi-utils-3.6.8.tgz#699bcd080117df526dfb7935115e47e1877d888a"
+  integrity sha1-aZvNCAEX31Jt+3k1EV5H4Yd9iIo=
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "^2.19.0"
@@ -10169,10 +10159,10 @@ strapi-utils@3.6.5:
     pluralize "^8.0.0"
     yup "^0.32.9"
 
-strapi@3.6.5:
-  version "3.6.5"
-  resolved "https://registry.nlark.com/strapi/download/strapi-3.6.5.tgz#bebfc494c5cf9a538c6a43d8b26b3ce233c856f7"
-  integrity sha1-vr/ElMXPmlOMakPYsms84jPIVvc=
+strapi@3.6.8:
+  version "3.6.8"
+  resolved "https://registry.npmmirror.com/strapi/download/strapi-3.6.8.tgz#91b349ca177ae7746d0aed5bcbd0d1a8e4c57c0f"
+  integrity sha512-vBzx27ZbVm+CL0E/EspvTC4UJkoSFdkaBk7C6sDOu/waZD4aitrmoRcZINrp4pfupgHVLFvMXi4HYWAkWhbuWA==
   dependencies:
     "@koa/cors" "^3.0.0"
     async "^2.1.2"
@@ -10217,16 +10207,16 @@ strapi@3.6.5:
     resolve-cwd "^3.0.0"
     rimraf "^3.0.2"
     semver "7.3.5"
-    strapi-database "3.6.5"
-    strapi-generate "3.6.5"
-    strapi-generate-api "3.6.5"
-    strapi-generate-controller "3.6.5"
-    strapi-generate-model "3.6.5"
-    strapi-generate-new "3.6.5"
-    strapi-generate-plugin "3.6.5"
-    strapi-generate-policy "3.6.5"
-    strapi-generate-service "3.6.5"
-    strapi-utils "3.6.5"
+    strapi-database "3.6.8"
+    strapi-generate "3.6.8"
+    strapi-generate-api "3.6.8"
+    strapi-generate-controller "3.6.8"
+    strapi-generate-model "3.6.8"
+    strapi-generate-new "3.6.8"
+    strapi-generate-plugin "3.6.8"
+    strapi-generate-policy "3.6.8"
+    strapi-generate-service "3.6.8"
+    strapi-utils "3.6.8"
 
 stream-browserify@^2.0.1:
   version "2.0.2"
@@ -10452,11 +10442,6 @@ symbol-observable@^1.2.0:
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
   integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
 
-synchronous-promise@^2.0.6:
-  version "2.0.13"
-  resolved "https://registry.yarnpkg.com/synchronous-promise/-/synchronous-promise-2.0.13.tgz#9d8c165ddee69c5a6542862b405bc50095926702"
-  integrity sha512-R9N6uDkVsghHePKh1TEqbnLddO2IY25OcsksyFp/qBe7XYd0PVbKEWxhcdMhpLzE1I6skj5l4aEZ3CRxcbArlA==
-
 tapable@^1.0.0, tapable@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.1.3.tgz#a1fccc06b58db61fd7a45da2da44f5f3a3e67ba2"
@@ -10504,10 +10489,10 @@ tar-stream@^2.1.4:
     inherits "^2.0.3"
     readable-stream "^3.1.1"
 
-tar@6.1.0:
-  version "6.1.0"
-  resolved "https://registry.npm.taobao.org/tar/download/tar-6.1.0.tgz?cache=0&sync_timestamp=1610045888507&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftar%2Fdownload%2Ftar-6.1.0.tgz#d1724e9bcc04b977b18d5c573b333a2207229a83"
-  integrity sha1-0XJOm8wEuXexjVxXOzM6IgcimoM=
+tar@6.1.4:
+  version "6.1.4"
+  resolved "https://registry.nlark.com/tar/download/tar-6.1.4.tgz#9f0722b772a5e00dba7d52e1923b37a7ec3799b3"
+  integrity sha1-nwcit3Kl4A26fVLhkjs3p+w3mbM=
   dependencies:
     chownr "^2.0.0"
     fs-minipass "^2.0.0"
@@ -11425,18 +11410,6 @@ ylru@^1.2.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/ylru/-/ylru-1.2.1.tgz#f576b63341547989c1de7ba288760923b27fe84f"
   integrity sha512-faQrqNMzcPCHGVC2aaOINk13K+aaBDUPjGWl0teOXywElLjyVAB6Oe2jj62jHYtwsU49jXhScYbvPENK+6zAvQ==
-
-yup@^0.27.0:
-  version "0.27.0"
-  resolved "https://registry.yarnpkg.com/yup/-/yup-0.27.0.tgz#f8cb198c8e7dd2124beddc2457571329096b06e7"
-  integrity sha512-v1yFnE4+u9za42gG/b/081E7uNW9mUj3qtkmelLbW5YPROZzSH/KUUyJu9Wt8vxFJcT9otL/eZopS0YK1L5yPQ==
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-    fn-name "~2.0.1"
-    lodash "^4.17.11"
-    property-expr "^1.5.0"
-    synchronous-promise "^2.0.6"
-    toposort "^2.0.2"
 
 yup@^0.32.9:
   version "0.32.9"
