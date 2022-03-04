@@ -17,6 +17,12 @@ services:
           property: connectionString
       - key: JWT_SECRET
         generateValue: true
+      - key: STORAGE_URL
+        value: https://ows.blob.core.chinacloudapi.cn
+      - key: STORAGE_ACCOUNT
+        value: ows
+      - key: STORAGE_CONTAINER_NAME
+        value: files
 
 databases:
   - name: kaiyuanshe-data
