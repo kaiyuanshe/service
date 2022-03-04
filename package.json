@@ -1,15 +1,13 @@
 {
   "name": "data-server",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.3.0",
+  "author": "shiy2008@gmail.com",
   "description": "A Strapi application",
-  "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi"
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
   },
-  "devDependencies": {},
   "dependencies": {
     "@strapi/plugin-documentation": "^4.1.2",
     "@strapi/plugin-i18n": "4.1.2",
@@ -17,17 +15,17 @@
     "@strapi/strapi": "4.1.2",
     "sqlite3": "5.0.2",
     "strapi-plugin-ckeditor5": "^2.0.0-rc.2",
-    "strapi-plugin-entity-relationship-chart": "^4.0.2"
-  },
-  "author": {
-    "name": "A Strapi developer"
+    "strapi-plugin-entity-relationship-chart": "^4.0.2",
+    "strapi-plugin-transformer": "^1.0.3",
+    "strapi-provider-upload-azure-storage": "^2.0.0"
   },
   "strapi": {
     "uuid": "92fea248-2325-4f7e-b270-f6d7c82ee81f"
   },
-  "engines": {
-    "node": ">=12.x.x <=16.x.x",
-    "npm": ">=6.0.0"
-  },
-  "license": "MIT"
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  }
 }
