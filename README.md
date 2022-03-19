@@ -2,6 +2,13 @@
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
 
+## 💻 环境
+
+- 测试后台：https://kaiyuanshe-server.onrender.com/admin/
+- 测试接口：https://kaiyuanshe-server.onrender.com/documentation/
+
+## 🚧 开发
+
 ### `develop`
 
 Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
