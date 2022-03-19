@@ -11,6 +11,7 @@ module.exports = ({ env }) => [
             "data:",
             "cdn.jsdelivr.net",
             "strapi.io",
+            "dl.airtable.com",
             env("STORAGE_URL").split("/").slice(-1)[0],
           ],
         },
