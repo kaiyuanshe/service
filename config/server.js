@@ -1,7 +1,13 @@
-module.exports = ({ env }) => ({
-  host: env('HOST', '0.0.0.0'),
-  port: env.int('PORT', 1337),
-  app: {
-    keys: env.array('APP_KEYS'),
-  },
-});
+module.exports = ({ env }) => {
+  const host = env('HOST', '0.0.0.0'),
+    port = env.int('PORT', 1337);
+
+  return {
+    host,
+    port,
+    url: env("URL", `http://${host}:${port}`),
+    app: {
+      keys: env.array('APP_KEYS'),
+    },
+  };
+};

@@ -13,6 +13,7 @@
     "@strapi/plugin-i18n": "4.1.5",
     "@strapi/plugin-users-permissions": "4.1.5",
     "@strapi/strapi": "4.1.5",
+    "cross-env": "^7.0.3",
     "pg": "^8.7.3",
     "pg-connection-string": "^2.5.0",
     "sqlite3": "5.0.2",
@@ -26,7 +27,7 @@
   },
   "scripts": {
     "develop": "strapi develop",
-    "start": "strapi start",
+    "start": "cross-env URL=$RENDER_EXTERNAL_URL  strapi start",
     "build": "strapi build",
     "strapi": "strapi"
   }

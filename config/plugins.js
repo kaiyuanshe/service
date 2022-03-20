@@ -1,4 +1,17 @@
 module.exports = ({ env }) => ({
+  documentation: {
+    config: {
+      info: {
+        version: "1.0.0",
+      },
+      "x-strapi-config": {
+        path: "/documentation",
+        showGeneratedFiles: true,
+        plugins: ["email", "upload", "users-permissions"],
+        pluginsForWhichToGenerateDoc: ["email", "upload", "users-permissions"],
+      },
+    },
+  },
   upload: {
     config: {
       provider: "strapi-provider-upload-azure-storage",
