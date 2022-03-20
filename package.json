@@ -27,7 +27,7 @@
   },
   "scripts": {
     "develop": "strapi develop",
-    "start": "cross-env URL=$RENDER_EXTERNAL_URL  strapi start",
+    "start": "cross-env URL=$RENDER_EXTERNAL_URL STRAPI_ADMIN_BACKEND_URL=$RENDER_EXTERNAL_URL  strapi start",
     "build": "strapi build",
     "strapi": "strapi"
   }
