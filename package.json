@@ -17,9 +17,9 @@
     "pg": "^8.7.3",
     "pg-connection-string": "^2.5.0",
     "sqlite3": "5.0.2",
-    "strapi-plugin-ckeditor5": "^2.0.0-rc.2",
+    "strapi-plugin-ckeditor5": "^2.1.1-rc.1",
     "strapi-plugin-entity-relationship-chart": "^4.0.2",
-    "strapi-plugin-transformer": "^1.0.3",
+    "strapi-plugin-transformer": "^2.0.0",
     "strapi-provider-upload-azure-storage": "^2.0.0"
   },
   "strapi": {
