@@ -25,11 +25,9 @@ export default {
       // 'tr',
       // 'uk',
       // 'vi',
-      // 'zh-Hans',
-      // 'zh',
+      'zh-Hans',
+      'zh',
     ],
   },
-  bootstrap(app) {
-    console.log(app);
-  },
+  bootstrap: console.log,
 };

@@ -2,7 +2,7 @@
   "collectionName": "components_location_addresses",
   "info": {
     "displayName": "Address",
-    "icon": "map-marked-alt"
+    "icon": "pinMap"
   },
   "options": {},
   "attributes": {

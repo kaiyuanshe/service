@@ -4,8 +4,7 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Article",
-    "description": ""
+    "displayName": "Article"
   },
   "options": {
     "draftAndPublish": true
@@ -42,15 +41,9 @@
     "image": {
       "type": "media",
       "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
+      ]
     },
     "link": {
       "pluginOptions": {
@@ -71,28 +64,17 @@
       "type": "string"
     },
     "license": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
       "type": "string"
     },
     "files": {
       "type": "media",
       "multiple": true,
-      "required": false,
       "allowedTypes": [
         "images",
         "videos",
         "audios",
         "files"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
+      ]
     },
     "author": {
       "type": "relation",
