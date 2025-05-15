@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  postgres-server:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=${ADMIN_JWT_SECRET}
+    volumes:
+      - ./.data:/var/lib/postgresql/data/
+    restart: always
+
+  data-server:
+    depends_on:
+      - postgres-server
+    image: kaiyuanshe/data-server
+    environment:
+      - DATABASE_CLIENT=postgres
+      - DATABASE_URL=postgres://postgres:${ADMIN_JWT_SECRET}@postgres-server:5432/postgres
+      - NODE_ENV=production
+    ports:
+      - 1337:1337
+    healthcheck:
+      test: ['CMD-SHELL', 'curl -f http://localhost:1337/ || exit 1']
+      interval: 3s
+      retries: 5
+      start_period: 30s
+    labels:
+      - autoheal=true
+    restart: always
+
+  autoheal:
+    image: willfarrell/autoheal:1.2.0
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
