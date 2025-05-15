@@ -9,8 +9,7 @@
     "displayName": "User"
   },
   "options": {
-    "draftAndPublish": false,
-    "timestamps": true
+    "draftAndPublish": false
   },
   "attributes": {
     "username": {
@@ -34,17 +33,20 @@
       "type": "password",
       "minLength": 6,
       "configurable": false,
-      "private": true
+      "private": true,
+      "searchable": false
     },
     "resetPasswordToken": {
       "type": "string",
       "configurable": false,
-      "private": true
+      "private": true,
+      "searchable": false
     },
     "confirmationToken": {
       "type": "string",
       "configurable": false,
-      "private": true
+      "private": true,
+      "searchable": false
     },
     "confirmed": {
       "type": "boolean",
@@ -76,13 +78,13 @@
         "images"
       ],
       "type": "media",
+      "required": false,
       "multiple": false
     },
     "summary": {
       "type": "string"
     },
     "address": {
-      "displayName": "Address",
       "type": "component",
       "repeatable": false,
       "component": "location.address"
