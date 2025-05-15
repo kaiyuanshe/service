@@ -19,10 +19,16 @@
     "@strapi/provider-upload-aws-s3": "^5.13.0",
     "@strapi/strapi": "5.13.0",
     "better-sqlite3": "11.3.0",
+    "cross-env": "^7.0.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
+    "prettier": "^3.5.3"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -36,7 +42,12 @@
   "prettier": {
     "singleQuote": true
   },
+  "lint-staged": {
+    "*.{md,json,yml,js,mjs,ts,tsx}": "prettier --write"
+  },
   "scripts": {
+    "prepare": "husky || true",
+    "test": "lint-staged",
     "upgrade:dry": "npx @strapi/upgrade latest --dry",
     "upgrade": "npx @strapi/upgrade latest",
     "develop": "strapi develop",

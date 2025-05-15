@@ -1,0 +1,11 @@
+README.md
+*.example
+node_modules/
+.data/
+Dockerfile
+docker-compose.yml
+start.sh
+.husky/
+.git/
+.github/
+.vscode/
