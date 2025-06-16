@@ -67,22 +67,14 @@
     },
     "gender": {
       "type": "enumeration",
-      "enum": [
-        "Female",
-        "Male",
-        "Other"
-      ]
+      "enum": ["female", "male", "other"]
     },
     "avatar": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "required": false,
-      "multiple": false
-    },
-    "summary": {
       "type": "string"
+    },
+    "mobilePhone": {
+      "type": "string",
+      "unique": true
     },
     "address": {
       "type": "component",

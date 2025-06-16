@@ -1,7 +1,7 @@
 {
   "name": "@kaiyuanshe/data-server",
   "private": true,
-  "version": "0.4.0",
+  "version": "0.5.0",
   "author": "shiy2008@gmail.com",
   "description": "A Strapi application",
   "strapi": {
@@ -9,30 +9,44 @@
     "installId": "453c7d047182464f1b26cbe8a96fa51f4fe517c9ffcb009112dcdf6212e7da6d"
   },
   "engines": {
-    "node": ">=18.0.0 <=22.x.x",
+    "node": ">=18.0.0",
     "npm": ">=6.0.0"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.13.0",
-    "@strapi/plugin-documentation": "^5.13.0",
-    "@strapi/plugin-users-permissions": "5.13.0",
-    "@strapi/provider-upload-aws-s3": "^5.13.0",
-    "@strapi/strapi": "5.13.0",
-    "better-sqlite3": "11.3.0",
+    "@arshiash80/strapi-plugin-iconhub": "^1.0.2",
+    "@ckeditor/strapi-plugin-ckeditor": "^1.1.1",
+    "@strapi/plugin-cloud": "~5.15.1",
+    "@strapi/plugin-color-picker": "~5.15.1",
+    "@strapi/plugin-documentation": "~5.15.1",
+    "@strapi/plugin-users-permissions": "~5.15.1",
+    "@strapi/strapi": "~5.15.1",
+    "better-sqlite3": "^11.10.0",
     "cross-env": "^7.0.3",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "^6.0.0",
-    "styled-components": "^6.0.0"
+    "pg": "^8.16.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.1",
+    "strapi-location-picker": "^0.0.1",
+    "strapi-plugin-multi-select": "^2.1.1",
+    "strapi-provider-cloudflare-r2": "^0.3.0",
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
+    "@types/node": "^22.15.32",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
     "husky": "^9.1.7",
-    "lint-staged": "^16.0.0",
-    "prettier": "^3.5.3"
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.5.3",
+    "swagger-typescript-api": "^13.2.2",
+    "tsx": "^4.20.3",
+    "typescript": "~5.8.3",
+    "zx": "^8.5.5"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "@swc/core",
+      "@tailwindcss/oxide",
       "better-sqlite3",
       "core-js-pure",
       "esbuild",
@@ -46,13 +60,19 @@
     "*.{md,json,yml,js,mjs,ts,tsx}": "prettier --write"
   },
   "scripts": {
-    "prepare": "husky || true",
+    "prepare": "(husky || true)  &&  (cp -u .env.example .env || true)",
     "test": "lint-staged",
     "upgrade:dry": "npx @strapi/upgrade latest --dry",
     "upgrade": "npx @strapi/upgrade latest",
+    "clean": "rm -rf .cache/ .strapi/ dist/",
     "develop": "strapi develop",
-    "start": "cross-env URL=$RENDER_EXTERNAL_URL  strapi start",
-    "build": "cross-env STRAPI_ADMIN_BACKEND_URL=$RENDER_EXTERNAL_URL  strapi build",
+    "make-type": "cd src/extensions/documentation/  &&  tsx make-type documentation/1.0.0/full_documentation.json ../../../types/client/",
+    "build-type": "rm -rf types/client/  &&  npm run make-type",
+    "start": "cross-env NODE_ENV=production  strapi start",
+    "build": "npm run clean  &&  strapi ts:generate-types  &&  cross-env NODE_ENV=production  strapi build",
+    "pack-image": "docker build -t idea2app/strapi-pnpm-docker-ts .",
+    "database": "docker rm -f postgres-server  &&  docker run --name postgres-server -v ./.data:/var/lib/postgresql/data/ -e POSTGRES_PASSWORD=tobemodified -p 5432:5432 -d postgres",
+    "container": "docker rm -f data-server  &&  docker run --name data-server -p 1337:1337 -d idea2app/strapi-pnpm-docker-ts",
     "deploy": "strapi deploy",
     "console": "strapi console",
     "strapi": "strapi"
