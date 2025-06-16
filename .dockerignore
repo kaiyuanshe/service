@@ -7,5 +7,6 @@ docker-compose.yml
 start.sh
 .husky/
 .git/
+.husky/
 .github/
 .vscode/
