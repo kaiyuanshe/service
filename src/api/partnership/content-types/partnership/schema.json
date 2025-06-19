@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "partnerships",
+  "info": {
+    "singularName": "partnership",
+    "pluralName": "partnerships",
+    "displayName": "Partnership"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "sponsor",
+        "place",
+        "media",
+        "community",
+        "device",
+        "travel",
+        "vendor"
+      ]
+    },
+    "level": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "activity": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::activity.activity",
+      "inversedBy": "partnerships"
+    },
+    "organization": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::organization.organization"
+    },
+    "account": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::account.account"
+    }
+  }
+}
