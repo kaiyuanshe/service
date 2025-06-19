@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "places",
+  "info": {
+    "singularName": "place",
+    "pluralName": "places",
+    "displayName": "Place"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "minLength": 4,
+      "required": true,
+      "unique": true
+    },
+    "capacity": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "indoor": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "availableTimes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "date.period",
+      "required": true
+    },
+    "contacts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::organization.organization"
+    },
+    "equipments": {
+      "type": "component",
+      "component": "supplies.goods",
+      "repeatable": true
+    },
+    "films": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": ["images", "videos", "files"]
+    },
+    "address": {
+      "type": "component",
+      "component": "location.address",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}

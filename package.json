@@ -1,7 +1,7 @@
 {
   "name": "@kaiyuanshe/data-server",
   "private": true,
-  "version": "0.5.0",
+  "version": "1.0.0",
   "author": "shiy2008@gmail.com",
   "description": "A Strapi application",
   "strapi": {

@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_supplies_goods",
+  "info": {
+    "displayName": "Goods",
+    "icon": "gift"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "specification": {
+      "type": "string",
+      "required": true
+    },
+    "amount": {
+      "type": "integer",
+      "required": true,
+      "default": 1,
+      "min": 1
+    },
+    "films": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images", "videos", "files"]
+    },
+    "remark": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["textile", "mechanical", "electric", "digital"]
+    },
+    "code": {
+      "type": "string",
+      "minLength": 12,
+      "unique": true
+    }
+  },
+  "config": {}
+}

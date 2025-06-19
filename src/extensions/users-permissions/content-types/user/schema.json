@@ -11,6 +11,7 @@
   "options": {
     "draftAndPublish": false
   },
+  "pluginOptions": {},
   "attributes": {
     "username": {
       "type": "string",
@@ -65,16 +66,30 @@
       "inversedBy": "users",
       "configurable": false
     },
+    "organizations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::organization.organization"
+    },
     "gender": {
       "type": "enumeration",
       "enum": ["female", "male", "other"]
     },
     "avatar": {
-      "type": "string"
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "summary": {
+      "type": "text",
+      "minLength": 3,
+      "unique": true
     },
     "mobilePhone": {
       "type": "string",
-      "unique": true
+      "minLength": 11,
+      "unique": true,
+      "regex": "^[\\d+-]+$"
     },
     "address": {
       "type": "component",

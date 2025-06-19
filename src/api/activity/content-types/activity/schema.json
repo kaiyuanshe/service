@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "activities",
+  "info": {
+    "singularName": "activity",
+    "pluralName": "activities",
+    "displayName": "Activity"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "required": true,
+      "unique": true
+    },
+    "slogan": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true
+    },
+    "banner": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 100
+    },
+    "startTime": {
+      "type": "datetime",
+      "required": true
+    },
+    "endTime": {
+      "type": "datetime",
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "minLength": 10,
+      "required": true
+    },
+    "organizers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user"
+    },
+    "partnerships": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::partnership.partnership",
+      "mappedBy": "activity"
+    }
+  }
+}
